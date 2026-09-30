@@ -7,6 +7,7 @@ import { openMenu, initMenu } from './menu.js';
 import { expireToast } from './toast.js';
 import { initDialogs, openTileEditor, openGroupEditor, openSettings } from './dialogs.js';
 import { initDnd } from './dnd.js';
+import { applyCredits } from './credits.js';
 import { resizeImage, isImageFile } from './images.js';
 import { ICON_MAX_PX, ICON_QUALITY } from './config.js';
 import * as actions from './actions.js';
@@ -419,6 +420,7 @@ async function dropImageOnTile(id, file) {
 async function init() {
   applyI18n(document);
   hydrateIcons(document);
+  applyCredits(document);
   initMenu();
   initDialogs();
   bindBoard();

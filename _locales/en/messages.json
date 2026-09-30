@@ -6,7 +6,7 @@
     "message": "Speed Dial"
   },
   "extDescription": {
-    "message": "A fast, beautiful new tab speed dial with groups, colours and your own tile images."
+    "message": "A fast, beautiful new tab speed dial with groups, colours and your own tile images. Crafted By Bash."
   },
   "actionTitle": {
     "message": "Add this page to Speed Dial"
@@ -422,5 +422,19 @@
   },
   "remoteIconsHint": {
     "message": "When Chrome has no icon cached for a site, ask Google's favicon service for it. Only the site's address is sent."
+  },
+  "creditLine": {
+    "message": "Crafted By Bash"
+  },
+  "creditTitle": {
+    "message": "Speed Dial on GitHub"
+  },
+  "versionLabel": {
+    "message": "Speed Dial $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
   }
 }

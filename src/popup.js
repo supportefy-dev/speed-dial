@@ -3,6 +3,7 @@ import { t, applyI18n } from './i18n.js';
 import { h, hydrateIcons } from './dom.js';
 import { normalizeUrl, shortTitle, hostLabel } from './urls.js';
 import { renderTile } from './tiles.js';
+import { applyCredits } from './credits.js';
 import { POPUP_CLOSE_MS, NEW_TAB_URL } from './config.js';
 
 const $ = (id) => document.getElementById(id);
@@ -25,6 +26,7 @@ function renderPreview(state, url) {
 async function init() {
   applyI18n(document);
   hydrateIcons(document);
+  applyCredits(document);
   $('popup-open').addEventListener('click', openSpeedDial);
   $('popup-open-alt').addEventListener('click', openSpeedDial);
 
