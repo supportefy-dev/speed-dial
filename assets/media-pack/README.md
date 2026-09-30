@@ -16,6 +16,7 @@ The repository currently grants no open-source license; its README states that s
 | Store screenshot 3 | `chrome-web-store/screenshot-03-tile-editor-1280x800.png` | 1280 × 800 PNG |
 | Store screenshot 4 | `chrome-web-store/screenshot-04-settings-1280x800.png` | 1280 × 800 PNG |
 | Store screenshot 5 | `chrome-web-store/screenshot-05-tile-menu-1280x800.png` | 1280 × 800 PNG |
+| Store screenshot 6 | `chrome-web-store/screenshot-06-pro-1280x800.png` | 1280 × 800 PNG |
 | README banner proposal | `repository/readme-banner-1280x480.png` | 1280 × 480 PNG |
 | GitHub social preview | `repository/social-preview-1280x640.png` | 1280 × 640 PNG |
 | Current manifest icon copies | `icons/extension-icon-{16,32,48,128}.png` | Existing extension sizes |
@@ -24,7 +25,7 @@ The repository currently grants no open-source license; its README states that s
 
 ## Submission checks
 
-1. Confirm the screenshots show the version being submitted. They were made from the repository's saved captures, not from a newly run browser session.
+1. Confirm the screenshots show the version being submitted. Regenerate all six, plus the README gallery, from the current build with `node tools/readme-media/store-screenshots.mjs`; it uses demo data only and shows the regular Pro price, so the set stays valid after the launch discount ends.
 2. Upload the store icon, small promo tile, and at least one screenshot. All five recommended screenshot slots are supplied in display order; the marquee is optional.
 3. Review and publish a privacy policy and complete the store's data disclosures. Describe the optional Google favicon lookup, linked images, and default-engine search accurately.
 4. Verify that the support, privacy, and homepage URLs are public before entering them in the listing. The public repository URL returned 404 without authentication on 2026-09-30.
@@ -37,6 +38,7 @@ The repository currently grants no open-source license; its README states that s
 3. Edit a tile's address, group, image, and color.
 4. Theme, layout, background, and backup settings.
 5. Open a tile menu to edit, move, or delete a site.
+6. Speed Dial Pro: unlimited groups for a one-time purchase, free for the first 100 early birds.
 
 ## Design references
 
