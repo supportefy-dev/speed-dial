@@ -1,22 +1,30 @@
-![Speed Dial: your sites, organized your way](assets/media-pack/repository/readme-banner-1280x480.png)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/banner-dark-1280x480.png">
+    <img src="assets/media-pack/repository/readme-banner-1280x480.png" alt="Speed Dial: your sites, organized your way" width="100%">
+  </picture>
+</p>
 
-# Speed Dial
+<h1 align="center">Speed Dial</h1>
 
 <p align="center">
   A customizable Chrome new tab for your favorite sites. Organize links into color-coded groups, choose your own tile images, and move your setup with a local backup file.
 </p>
 
 <p align="center">
-  <img alt="Version 1.1.0" src="https://img.shields.io/badge/version-1.1.0-4f8ef7?style=flat-square">
+  <a href="https://github.com/supportefy-dev/speed-dial/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/supportefy-dev/speed-dial?style=flat-square&labelColor=16191D&color=4F8EF7&label=release"></a>
+  <a href="https://github.com/supportefy-dev/speed-dial/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/supportefy-dev/speed-dial/total?style=flat-square&labelColor=16191D&color=A06CF0&label=downloads"></a>
   <img alt="Chrome 116+" src="https://img.shields.io/badge/Chrome-116%2B-4f8ef7?style=flat-square&logo=googlechrome&logoColor=white">
   <img alt="Edge" src="https://img.shields.io/badge/Edge-supported-0078d7?style=flat-square&logo=microsoftedge&logoColor=white">
   <img alt="Firefox 128+ preview" src="https://img.shields.io/badge/Firefox-128%2B%20preview-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
-  <img alt="No account, no server" src="https://img.shields.io/badge/account-none%20required-34c38f?style=flat-square">
+  <a href="LICENSE"><img alt="License: all rights reserved" src="https://img.shields.io/badge/license-all%20rights%20reserved-16191D?style=flat-square"></a>
   <a href="https://paypal.me/BashOM"><img alt="Donate with PayPal" src="https://img.shields.io/badge/donate-PayPal-0070BA?style=flat-square&logo=paypal&logoColor=white"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/supportefy-dev/speed-dial/releases/latest"><strong>Download the current release</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="#see-it-in-action">See it in action</a>
   &nbsp;&middot;&nbsp;
   <a href="#preview">Preview</a>
   &nbsp;&middot;&nbsp;
@@ -29,17 +37,90 @@
 
 > Speed Dial is not in the browser stores yet. Install it from the release ZIP for your browser, below.
 
+## Features
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/groups-layouts.svg" alt="" width="40" height="40"><br>
+      <strong>Groups and layouts</strong><br>
+      <sub>Color-coded groups shown as tabs or as collapsible sections; drag to reorder.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/custom-tiles.svg" alt="" width="40" height="40"><br>
+      <strong>Custom tiles</strong><br>
+      <sub>Set each tile's title, address, color and image: site icon, upload, link or letter.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/quick-add.svg" alt="" width="40" height="40"><br>
+      <strong>Quick add</strong><br>
+      <sub>The + tile, toolbar button, right-click menu, or a link dragged onto the grid.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/search.svg" alt="" width="40" height="40"><br>
+      <strong>Search</strong><br>
+      <sub>Type to filter your saved sites; press Enter to search the web instead.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/backups.svg" alt="" width="40" height="40"><br>
+      <strong>Local backups</strong><br>
+      <sub>Export everything to a file and restore it later; deletes and restores can be undone.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src="assets/readme/icons/pro.svg" alt="" width="40" height="40"><br>
+      <strong>Pro and early bird</strong><br>
+      <sub>Unlimited groups with a one-time Pro purchase, or free forever for the first 100 users.</sub>
+    </td>
+  </tr>
+</table>
+
+## See it in action
+
+<p align="center">
+  <img src="assets/readme/demo.gif" alt="Speed Dial's new tab page with demo sites: switching groups, switching between the Tabs and Sections layouts, adding a tile, and dragging a tile to reorder it" width="460">
+</p>
+
+<sub>Recorded from the real extension with sample groups and sites; no personal data.</sub>
+
+## How it works
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/how-it-works-dark.png">
+  <img src="assets/readme/how-it-works-light.png" alt="Add a site, organize it into a colored group, then open it from any new tab; going Pro is optional" width="100%">
+</picture>
+
 ## Browser support
 
-| Browser | Status | Package |
-|---|---|---|
-| Google Chrome 116+ | Supported. Full test suite passes. | `chromium` ZIP |
-| Microsoft Edge | Supported. Full test suite passes in Edge 154. | `chromium` ZIP |
-| Brave | Expected to work (same engine as Chrome), not tested yet. **Import most visited sites** may find nothing, because Brave turns that data off for privacy. | `chromium` ZIP |
-| Firefox 128+ | Preview. Its own build installs and opens in Firefox 155; the full test pass is still pending. Site icons come from the online icon lookup, because Firefox has no icon cache for extensions. | `firefox` ZIP |
-| Vivaldi | Works, but Vivaldi does not let extensions replace the new tab until you allow it in Vivaldi's settings. You can always open Speed Dial from its toolbar button. | `chromium` ZIP |
-| Opera, Arc | The new tab cannot be replaced (Opera keeps its own Speed Dial; Arc ignores new tab extensions). Open Speed Dial from the toolbar button and pin the tab. | `chromium` ZIP |
-| Safari | Not supported yet. It needs an Apple-signed app wrapper. | - |
+<table>
+  <tr>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/chrome/chrome_48x48.png" alt="" width="40" height="40"><br><strong>Chrome</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/edge/edge_48x48.png" alt="" width="40" height="40"><br><strong>Edge</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/brave/brave_48x48.png" alt="" width="40" height="40"><br><strong>Brave</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/opera/opera_48x48.png" alt="" width="40" height="40"><br><strong>Opera</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/vivaldi/vivaldi_48x48.png" alt="" width="40" height="40"><br><strong>Vivaldi</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/firefox/firefox_48x48.png" alt="" width="40" height="40"><br><strong>Firefox</strong></td>
+    <td align="center" width="14%"><img src="https://cdn.jsdelivr.net/gh/alrra/browser-logos@v47.0.0/src/safari/safari_48x48.png" alt="" width="40" height="40"><br><strong>Safari</strong></td>
+  </tr>
+  <tr>
+    <td align="center">Supported<br><sub>116+</sub></td>
+    <td align="center">Supported<br><sub>tested 154</sub></td>
+    <td align="center">Expected<br><sub>not tested</sub></td>
+    <td align="center">Toolbar only<br><sub>no new tab</sub></td>
+    <td align="center">Works<br><sub>allow in settings</sub></td>
+    <td align="center">Preview<br><sub>128+</sub></td>
+    <td align="center">Not supported<br><sub>not yet</sub></td>
+  </tr>
+</table>
+
+- **Chrome and Edge** were tested with the extension loaded: the full test suite passes in Chromium, the open-source engine Chrome is built on, and in Edge 154. Install from the extensions page with **Developer mode** on, using the chromium ZIP.
+- **Brave** uses the same Chromium engine and should work; **Import most visited sites** may find nothing, because Brave turns that data off. Please [report](https://github.com/supportefy-dev/speed-dial/issues) what you find.
+- **Opera and Arc** do not let extensions replace the new tab (Opera keeps its own Speed Dial). Open Speed Dial from the toolbar button and pin the tab.
+- **Vivaldi** needs the extension's new tab allowed in Vivaldi's settings; the toolbar button always works.
+- **Firefox** uses its own ZIP (preview): it installs and opens in Firefox 155, and the full test pass is pending. Site icons come from the online icon lookup, because Firefox has no icon cache for extensions.
+- **Safari** needs an Apple-signed app wrapper, so it is not available yet.
+- **Mobile browsers** are not supported: Chrome on Android and iOS has no extension support.
 
 ## Install
 
@@ -70,13 +151,6 @@ python tools/build.py
 ```
 
 `tools/build.py` writes `dist/chromium/` and `dist/firefox/`; load the folder for your browser as above. The repository root itself also loads as-is in Chrome and Edge.
-
-## What you can do
-
-- **Organize sites.** Color-coded groups shown as tabs or as stacked, collapsible sections. Drag to reorder tiles and groups, or drop a tile on another group. The free tier holds up to 3 groups; [Speed Dial Pro](#speed-dial-pro) removes that limit.
-- **Personalize tiles.** Set each tile's title, address, color and image: the site's icon, an uploaded picture, an image link, or a letter.
-- **Add sites quickly.** The **+** tile, the toolbar button, the right-click menu, dragging links from the bookmarks bar, or importing your most visited sites.
-- **Keep your setup.** Everything is saved in the browser. Export a backup file and restore it on another computer; deletes, moves and restores can be undone.
 
 ## Preview
 
@@ -200,7 +274,7 @@ For interface changes, manually verify:
 6. Theme, layout, tile size and background changes in Settings.
 7. If the change touches groups or licensing: the 3-group free limit, and activating and removing a Pro license key.
 
-Strings live in `_locales/en/messages.json`. To translate, add `_locales/<language>/messages.json` with the same keys. Sizes, colors, timings and limits live in `src/config.js`; visual tokens live at the top of `src/newtab.css`. `python tools/make_icons.py` redraws the icons in `icons/` (needs Pillow). Store and README artwork, with editable SVG sources and listing copy, is in [`assets/media-pack/`](assets/media-pack/README.md).
+Strings live in `_locales/en/messages.json`. To translate, add `_locales/<language>/messages.json` with the same keys. Sizes, colors, timings and limits live in `src/config.js`; visual tokens live at the top of `src/newtab.css`. `python tools/make_icons.py` redraws the icons in `icons/` (needs Pillow). Store and README artwork, with editable SVG sources and listing copy, is in [`assets/media-pack/`](assets/media-pack/README.md); the README-only artwork (dark banner, feature icons, how-it-works diagram, demo GIF) and the scripts that rebuild it are in [`tools/readme-media/`](tools/readme-media/README.md).
 
 <details>
 <summary>Project structure</summary>
@@ -210,8 +284,10 @@ manifest.json            Extension manifest (MV3)
 _locales/en/             Every user-facing string
 icons/                   Toolbar and store icons
 assets/media-pack/       Store, README and social artwork plus sources
+assets/readme/           README-only artwork built by tools/readme-media/
 docs/screenshots/        Images used in this README
 tools/make_icons.py      Regenerates icons/
+tools/readme-media/      Scripts that rebuild assets/readme/
 src/
   newtab.html/.css       The new tab page and its design tokens (light and dark)
   app.js                 Rendering, events and keyboard handling for the new tab page
