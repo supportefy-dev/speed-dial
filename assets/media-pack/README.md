@@ -4,6 +4,8 @@ Editable SVG artwork and exported PNGs for the extension, Chrome Web Store, READ
 
 The repository currently grants no open-source license; its README states that source rights are reserved. No license file is included in this pack.
 
+Submitting to a store? Every dashboard field, ready to paste, is in [STORE-SUBMISSION.md](STORE-SUBMISSION.md).
+
 ## Use these files
 
 | Placement | File | Size |
