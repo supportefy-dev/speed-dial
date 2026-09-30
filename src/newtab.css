@@ -629,6 +629,36 @@ kbd {
   margin-bottom: 0;
 }
 
+.add-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: var(--grid-width);
+  min-height: 48px;
+  margin: 0 auto;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--text-dim);
+  font: 500 13.5px/1 var(--font);
+  cursor: pointer;
+  transition: border-color var(--dur-fast), color var(--dur-fast), background var(--dur-fast);
+}
+.add-section:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 6%, transparent);
+}
+.has-bg .add-section {
+  background: color-mix(in oklab, var(--surface) 40%, transparent);
+  backdrop-filter: blur(8px);
+}
+.is-dragging .add-section {
+  opacity: 0.4;
+}
+
 .empty {
   display: flex;
   flex-direction: column;

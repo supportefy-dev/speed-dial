@@ -104,6 +104,10 @@ function renderSection(state, group) {
   );
 }
 
+function renderAddSection() {
+  return h('button', { type: 'button', class: 'add-section', 'data-action': 'add-group' }, icon('plus'), t('newGroup'));
+}
+
 function renderResults(state) {
   const needle = query.toLowerCase();
   const matches = state.tiles.filter((x) => tileLabel(x).toLowerCase().includes(needle) || x.url.toLowerCase().includes(needle));
@@ -152,7 +156,7 @@ function renderBoard(state) {
   lastView = view;
   let content;
   if (query) content = renderResults(state);
-  else if (layout === 'sections') content = state.groups.map((group) => renderSection(state, group));
+  else if (layout === 'sections') content = [...state.groups.map((group) => renderSection(state, group)), renderAddSection()];
   else content = renderTabsView(state, enter);
   els.board.dataset.layout = query ? 'results' : layout;
   flip(els.board, () => els.board.replaceChildren(...[content].flat().filter(Boolean)));
