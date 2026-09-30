@@ -10,6 +10,7 @@
 ![No build step](https://img.shields.io/badge/build-none-34c38f)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-a06cf0)
 ![Version](https://img.shields.io/badge/version-1.0.0-f5a524)
+[![Donate](https://img.shields.io/badge/PayPal-Support%20Speed%20Dial-e0457b?logo=paypal&logoColor=white)](https://paypal.me/BashOM)
 
 <img src="docs/screenshots/tabs-dark.png" alt="Speed Dial in dark theme with the tabs layout" width="100%">
 
@@ -28,6 +29,7 @@
 - [Permissions](#permissions)
 - [Project structure](#project-structure)
 - [Development](#development)
+- [Support](#support)
 - [Credits](#credits)
 
 ## Features
@@ -169,6 +171,14 @@ src/
 - Sizes, colours, timings and limits live in `src/config.js`; visual tokens live at the top of `src/newtab.css`.
 - `python tools/make_icons.py` redraws the icons in `icons/`.
 
+## Support
+
+Speed Dial is free. If it makes your day a little faster, you can support its development with a donation:
+
+<p align="center"><a href="https://paypal.me/BashOM"><img src="https://img.shields.io/badge/Donate%20with-PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate with PayPal"></a></p>
+
+The same link is in the extension: **Support** next to the credit on the new tab page, the **Support** section in Settings, and the toolbar popup.
+
 ## Credits
 
 **Crafted By Bash.**
@@ -177,4 +187,4 @@ The credit also appears in the extension itself: at the bottom right of the new 
 
 ---
 
-<p align="center"><sub>Speed Dial 1.0.0 &middot; Crafted By Bash</sub></p>
+<p align="center"><sub>Speed Dial 1.0.0 &middot; Crafted By Bash &middot; <a href="https://paypal.me/BashOM">Support on PayPal</a></sub></p>

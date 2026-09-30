@@ -18,6 +18,7 @@
   --inverse-accent: #8fb6ff;
   --scrim: rgb(17 24 39 / 0.32);
   --overlay-rgb: 243 244 246;
+  --heart: #e0457b;
   --shadow-sm: 0 1px 2px rgb(17 24 39 / 0.06), 0 1px 1px rgb(17 24 39 / 0.04);
   --shadow-md: 0 10px 24px -6px rgb(17 24 39 / 0.14), 0 2px 6px rgb(17 24 39 / 0.06);
   --shadow-lg: 0 28px 64px -12px rgb(17 24 39 / 0.28), 0 6px 16px rgb(17 24 39 / 0.08);
@@ -1352,6 +1353,34 @@ select.input {
   bottom: 14px;
   inset-inline-end: 18px;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.donate .icon svg {
+  width: 13px;
+  height: 13px;
+}
+.donate:hover .icon,
+.donate-btn .icon {
+  color: var(--heart);
+}
+.donate:hover .icon svg,
+.donate-btn .icon svg {
+  fill: currentColor;
+}
+.support-text {
+  margin: 0 0 12px;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.donate-btn {
+  text-decoration: none;
 }
 .has-bg .credit-link {
   color: var(--text-dim);
@@ -1373,8 +1402,8 @@ select.input {
   }
   .credit {
     position: static;
+    justify-content: center;
     padding: 0 16px 24px;
-    text-align: center;
   }
   .page {
     gap: 22px;

@@ -35,7 +35,7 @@
       <section class="board" id="board" data-i18n-aria="sites"></section>
     </main>
 
-    <footer class="credit"><a class="credit-link" data-credit target="_blank" rel="noopener" data-i18n="creditLine" data-i18n-title="creditTitle"></a></footer>
+    <footer class="credit"><a class="credit-link donate" data-donate target="_blank" rel="noopener" data-icon="heart" data-i18n-title="donateTitle"><span data-i18n="donateLink"></span></a><a class="credit-link" data-credit target="_blank" rel="noopener" data-i18n="creditLine" data-i18n-title="creditTitle"></a></footer>
 
     <div class="toast-region" id="toasts" aria-live="polite"></div>
     <div class="menu" id="menu" role="menu" popover></div>
@@ -224,6 +224,12 @@
               <input type="file" id="file-backup" accept="application/json,.json" hidden />
             </div>
             <p class="hint" data-i18n="dataHint"></p>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionSupport"></h3>
+            <p class="support-text" data-i18n="supportHint"></p>
+            <a class="btn block donate-btn" data-donate target="_blank" rel="noopener" data-icon="heart"><span data-i18n="donateButton"></span></a>
           </section>
 
           <section class="settings-group">

@@ -50,10 +50,12 @@ body.popup {
   margin-top: 4px;
 }
 .popup-credit {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
-  text-align: center;
 }
 .popup-state {
   display: flex;

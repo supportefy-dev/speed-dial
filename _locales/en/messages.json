@@ -436,5 +436,20 @@
         "content": "$1"
       }
     }
+  },
+  "donateLink": {
+    "message": "Support"
+  },
+  "donateTitle": {
+    "message": "Support Speed Dial with a donation on PayPal"
+  },
+  "donateButton": {
+    "message": "Donate with PayPal"
+  },
+  "sectionSupport": {
+    "message": "Support"
+  },
+  "supportHint": {
+    "message": "Speed Dial is free. If it makes your day a little faster, a small donation keeps it improving."
   }
 }

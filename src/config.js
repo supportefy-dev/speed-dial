@@ -68,3 +68,4 @@ export const TOP_SITES_LIMIT = 12;
 export const MENU_OFFSET_PX = 6;
 export const VIEWPORT_MARGIN_PX = 8;
 export const NEW_TAB_URL = 'chrome://newtab/';
+export const DONATE_URL = 'https://paypal.me/BashOM';
