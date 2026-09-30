@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280"><defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4F8EF7"/><stop offset="1" stop-color="#A06CF0"/></linearGradient>
+<linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17191E"/><stop offset="1" stop-color="#24203A"/></linearGradient>
+<linearGradient id="pale" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FAFBFD"/><stop offset="1" stop-color="#EBEDF7"/></linearGradient>
+</defs><rect width="440" height="280" fill="url(#brand)"/>
+<circle cx="421" cy="-9" r="182" fill="#FFFFFF" opacity=".08"/>
+<circle cx="421" cy="-9" r="139" fill="none" stroke="#FFFFFF" stroke-opacity=".26" stroke-width="1"/>
+<rect x="29" y="26" width="70" height="70" rx="16.8" fill="url(#brand)"/><rect x="44.4" y="41.4" width="16.8" height="16.8" rx="4.704000000000001" fill="#FFFFFF" opacity="1"/><rect x="66.8" y="41.4" width="16.8" height="16.8" rx="4.704000000000001" fill="#FFFFFF" opacity="0.84"/><rect x="44.4" y="63.8" width="16.8" height="16.8" rx="4.704000000000001" fill="#FFFFFF" opacity="0.84"/><rect x="66.8" y="63.8" width="16.8" height="16.8" rx="4.704000000000001" fill="#FFFFFF" opacity="1"/>
+<rect x="326" y="47" width="51" height="51" rx="11.22" fill="#FFFFFF" opacity="0.21"/><rect x="385" y="47" width="51" height="51" rx="11.22" fill="#FFFFFF" opacity="0.35"/>
+<rect x="326" y="106" width="51" height="51" rx="11.22" fill="#FFFFFF" opacity="0.35"/><rect x="385" y="106" width="51" height="51" rx="11.22" fill="#FFFFFF" opacity="0.21"/>
+<text x="29" y="181" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="43" font-weight="700" letter-spacing="-1" text-anchor="start">Speed Dial</text>
+<text x="30" y="216" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" letter-spacing="0" text-anchor="start">Your new tab, your way.</text>
+<rect x="30" y="237" width="104" height="4" rx="2" fill="#FFFFFF" opacity=".9"/></svg>

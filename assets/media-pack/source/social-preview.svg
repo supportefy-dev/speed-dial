@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640"><defs>
+<linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4F8EF7"/><stop offset="1" stop-color="#A06CF0"/></linearGradient>
+<linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17191E"/><stop offset="1" stop-color="#24203A"/></linearGradient>
+<linearGradient id="pale" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FAFBFD"/><stop offset="1" stop-color="#EBEDF7"/></linearGradient>
+</defs><rect width="1280" height="640" fill="url(#night)"/>
+<circle cx="975" cy="320" r="265" fill="none" stroke="#4F8EF7" stroke-opacity=".30" stroke-width="2"/>
+<circle cx="975" cy="320" r="217" fill="none" stroke="#A06CF0" stroke-opacity=".30" stroke-width="2"/>
+<rect x="718" y="71" width="184" height="184" rx="40.48" fill="#283A60" opacity="1"/><rect x="951" y="71" width="184" height="184" rx="40.48" fill="#443666" opacity="1"/>
+<rect x="718" y="384" width="184" height="184" rx="40.48" fill="#433663" opacity="1"/><rect x="951" y="384" width="184" height="184" rx="40.48" fill="#344D75" opacity="1"/>
+<rect x="836" y="184" width="278" height="278" rx="66.72" fill="url(#brand)"/><rect x="897.16" y="245.16" width="66.72" height="66.72" rx="18.681600000000003" fill="#FFFFFF" opacity="1"/><rect x="986.12" y="245.16" width="66.72" height="66.72" rx="18.681600000000003" fill="#FFFFFF" opacity="0.84"/><rect x="897.16" y="334.12" width="66.72" height="66.72" rx="18.681600000000003" fill="#FFFFFF" opacity="0.84"/><rect x="986.12" y="334.12" width="66.72" height="66.72" rx="18.681600000000003" fill="#FFFFFF" opacity="1"/>
+<text x="68" y="139" fill="#AFC8FF" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="2.7" text-anchor="start">MAKE EVERY NEW TAB YOURS</text>
+<text x="64" y="294" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="86" font-weight="700" letter-spacing="-3" text-anchor="start">Speed Dial</text>
+<text x="70" y="366" fill="#CDD1DF" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="400" letter-spacing="0" text-anchor="start">Groups, custom tiles, and local backups.</text>
+<rect x="70" y="429" width="336" height="52" rx="26" fill="url(#brand)"/>
+<text x="238" y="463" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="0.4" text-anchor="middle">ORGANIZE  ·  PERSONALIZE</text></svg>

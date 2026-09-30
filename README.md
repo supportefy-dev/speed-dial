@@ -1,96 +1,52 @@
-<div align="center">
-
-<img src="icons/icon128.png" width="96" height="96" alt="Speed Dial icon">
+![Speed Dial: your sites, organized your way](assets/media-pack/repository/readme-banner-1280x480.png)
 
 # Speed Dial
 
-**A fast, good-looking new tab page for Chrome, with groups, colours and your own tile images.**
+A customizable Chrome new tab for your favorite sites. Organize links into color-coded groups, choose your own tile images, and move your setup with a local backup file.
 
-![Manifest V3](https://img.shields.io/badge/Manifest-V3-4f8ef7)
-![No build step](https://img.shields.io/badge/build-none-34c38f)
-![Dependencies](https://img.shields.io/badge/dependencies-0-a06cf0)
-![Version](https://img.shields.io/badge/version-1.0.0-f5a524)
-[![Donate](https://img.shields.io/badge/PayPal-Support%20Speed%20Dial-e0457b?logo=paypal&logoColor=white)](https://paypal.me/BashOM)
+**Start here:** [Install](#install) · [Preview](#preview) · [Your data](#privacy-and-permissions)
 
-<img src="docs/screenshots/tabs-dark.png" alt="Speed Dial in dark theme with the tabs layout" width="100%">
-
-</div>
-
----
-
-## Contents
-
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Install](#install)
-- [Using Speed Dial](#using-speed-dial)
-- [Keyboard shortcuts](#keyboard-shortcuts)
-- [Your data and privacy](#your-data-and-privacy)
-- [Permissions](#permissions)
-- [Project structure](#project-structure)
-- [Development](#development)
-- [Support](#support)
-- [Credits](#credits)
-
-## Features
-
-**Groups**
-- As many groups as you need, each with its own colour: 8 presets or any custom colour
-- Two layouts: **Tabs** (one group at a time) or **Sections** (every group stacked, each one collapsible)
-- Rename, recolour, reorder by drag, open every site in a group at once, delete with undo
-
-**Tiles**
-- Custom address, title, group and colour for every tile
-- Four image sources: **Site icon** (automatic), **Upload** (choose, drag in or paste), **Link** (an image URL) or **Letter**
-- Uploaded images are resized and stored as WebP, so they stay small
-- Drag to reorder, drag onto a group tab to move, or hover over a tab to open it and drop in an exact spot
-- Drop an image file straight onto a tile to change its picture
-
-**Adding sites**
-- The dashed **+** tile in every group
-- The toolbar button, which adds the page you are on
-- Right-click any page or link and choose **Add to Speed Dial**
-- Drag links in from the bookmarks bar
-- Import your most visited sites in one click
-
-**Everything else**
-- The search box filters your saved sites across all groups as you type; `Enter` searches the web with your default search engine
-- Dark, light or automatic theme, three tile sizes, a limit on tiles per row, optional titles
-- Background image with adjustable dimming
-- Undo for deletes, moves, imports and restores
-- Full keyboard control and screen-reader labels
-- Works from phone width up to ultra-wide
-- Open tabs update straight away when you change something in another tab
-
-## Screenshots
-
-| Sections layout, light theme | Tile editor |
-|---|---|
-| ![Sections layout](docs/screenshots/sections-light.png) | ![Tile editor](docs/screenshots/tile-editor.png) |
-
-| Tile menu | Settings |
-|---|---|
-| ![Tile menu](docs/screenshots/tile-menu.png) | ![Settings](docs/screenshots/settings.png) |
-
-<p align="center"><img src="docs/screenshots/narrow.png" alt="Narrow window" width="260"></p>
+> Requires Chrome 116 or newer. Speed Dial currently installs through Chrome's **Load unpacked** flow.
 
 ## Install
-
-Speed Dial is not on the Chrome Web Store yet. To load it directly:
 
 1. Download or clone this repository.
    ```bash
    git clone https://github.com/supportefy-dev/speed-dial.git
    ```
 2. Open `chrome://extensions` and switch on **Developer mode** (top right).
-3. Click **Load unpacked** and select the cloned folder (the one containing `manifest.json`).
-4. Open a new tab. Chrome asks whether to keep the changed new tab page: choose **Keep it**.
+3. Click **Load unpacked** and select the folder that contains `manifest.json`.
+4. Open a new tab. When Chrome asks whether to keep the changed new tab page, choose **Keep it**.
 
-To update later, pull the latest changes and press the reload icon on the Speed Dial card in `chrome://extensions`.
+To update, pull the latest changes and press the reload icon on the Speed Dial card in `chrome://extensions`.
 
-Requires Chrome 116 or newer.
+## What you can do
 
-## Using Speed Dial
+- **Organize sites.** Color-coded groups shown as tabs or as stacked, collapsible sections. Drag to reorder tiles and groups, or drop a tile on another group.
+- **Personalize tiles.** Set each tile's title, address, color and image: the site's icon, an uploaded picture, an image link, or a letter.
+- **Add sites quickly.** The **+** tile, the toolbar button, the right-click menu, dragging links from the bookmarks bar, or importing your most visited sites.
+- **Keep your setup.** Everything is saved in the browser. Export a backup file and restore it on another computer; deletes, moves and restores can be undone.
+
+## Preview
+
+| Tabs, dark theme | Sections, light theme |
+|---|---|
+| ![Tabs layout in the dark theme](docs/screenshots/tabs-dark.png) | ![Sections layout in the light theme](docs/screenshots/sections-light.png) |
+
+<details>
+<summary>More screenshots: tile editor, tile menu, settings, narrow window</summary>
+
+| Tile editor | Tile menu |
+|---|---|
+| ![Tile editor](docs/screenshots/tile-editor.png) | ![Tile menu](docs/screenshots/tile-menu.png) |
+
+| Settings | Narrow window |
+|---|---|
+| ![Settings panel](docs/screenshots/settings.png) | ![Narrow window](docs/screenshots/narrow.png) |
+
+</details>
+
+## How to use it
 
 | To | Do this |
 |---|---|
@@ -98,14 +54,37 @@ Requires Chrome 116 or newer.
 | Edit a site | Hover it and click **...**, right-click it, or focus it and press `F2` |
 | Change a tile's picture | Edit the site and pick **Site icon**, **Upload**, **Link** or **Letter**, or drop an image file onto the tile |
 | Reorder sites | Drag them, or press `Alt + Left/Right` on the focused tile |
-| Move a site to another group | Drag it onto the group's tab, or use **Move to** in its menu |
-| Create a group | The **+** after the group tabs, or **New group** at the bottom in Sections layout |
-| Rename or recolour a group | Double-click its tab, or right-click and choose **Edit group** |
-| Reorder groups | Drag the group tabs, or drag the section headers in Sections layout |
-| Switch layout, theme, sizes | Open **Settings** (top right) |
+| Move a site to another group | Drag it onto the group's tab (hover to open the group and drop it in place), or use **Move to** in its menu |
+| Create a group | The **+** after the group tabs, or **New group** at the bottom of the Sections layout |
+| Rename or recolor a group | Double-click its tab, or right-click and choose **Edit group** |
+| Reorder groups | Drag the group tabs, or drag the section headers in the Sections layout |
+| Search | Typing filters your saved sites across all groups; `Enter` searches the web with your default search engine |
+| Change layout, theme, sizes, background | Open **Settings** (top right) |
 | Undo | Click **Undo** on the notice at the bottom of the page |
 
 > Chrome does not let extensions read the shortcuts on Google's own new tab page. Use **Settings > Import most visited sites**, or click the toolbar button on each site you want to keep.
+
+## Privacy and permissions
+
+Speed Dial has no account, no analytics and no server of its own. Your groups, tiles, uploaded images, background and settings are saved in the browser (`chrome.storage.local`). A few actions do reach other services:
+
+- **Missing site icons.** When Chrome has no icon cached for a site and **Settings > Fetch missing site icons** is on, the site's origin (for example `https://example.com`) is sent to Google's favicon service. Turn it off and those tiles show a letter.
+- **Image links.** A tile that uses an image link loads that image from its host.
+- **Search.** Pressing `Enter` in the search box sends the text to your default search engine.
+- **Backups.** Exported backup files are saved where you choose; they contain your tiles, uploaded images and background.
+
+The full policy is in [PRIVACY.md](PRIVACY.md).
+
+| Permission | Why it is needed |
+|---|---|
+| `storage`, `unlimitedStorage` | Save your groups, tiles, uploaded images and background |
+| `favicon` | Read site icons from Chrome's local cache |
+| `topSites` | Import your most visited sites, only when you ask |
+| `search` | Send the search box to your default search engine |
+| `contextMenus` | The **Add to Speed Dial** right-click entries |
+| `activeTab` | Read the current page's address and title when you click the toolbar button |
+
+Speed Dial requests no host permissions and never reads the content of the pages you visit.
 
 ## Keyboard shortcuts
 
@@ -122,33 +101,24 @@ Requires Chrome 116 or newer.
 | `Shift + F10` | Open the options menu |
 | `Esc` | Clear the search, or close a menu or dialog |
 
-## Your data and privacy
+## Development
 
-- Everything is stored locally in `chrome.storage.local`. Nothing is sent to any server run by this project.
-- **Settings > Export backup** saves a single JSON file holding every group, tile, uploaded image and the background. **Restore from backup** loads it on another computer or browser, and the restore can be undone.
-- Site icons come from Chrome's own favicon cache. For a site Chrome has no icon for yet, Speed Dial asks Google's favicon service, sending only that site's origin (for example `https://example.com`). Switch this off with **Settings > Fetch missing site icons**; those tiles then show a letter.
+- Plain ES modules with no build step and no runtime dependencies. Edit a file, then reload the extension in `chrome://extensions`.
+- Strings live in `_locales/en/messages.json`. To translate, add `_locales/<language>/messages.json` with the same keys.
+- Sizes, colors, timings and limits live in `src/config.js`; visual tokens live at the top of `src/newtab.css`.
+- `python tools/make_icons.py` redraws the icons in `icons/` (needs Pillow).
+- Store and README artwork, with editable SVG sources and listing copy, is in [`assets/media-pack/`](assets/media-pack/README.md).
 
-## Permissions
-
-| Permission | Why it is needed |
-|---|---|
-| `storage`, `unlimitedStorage` | Save your groups, tiles, uploaded images and background |
-| `favicon` | Read site icons from Chrome's local cache |
-| `topSites` | Import your most visited sites |
-| `search` | Send the search box to your default search engine |
-| `contextMenus` | The **Add to Speed Dial** right-click entries |
-| `activeTab` | Read the current page's address and title when you click the toolbar button |
-
-Speed Dial asks for no host permissions and never reads the content of the pages you visit.
-
-## Project structure
+<details>
+<summary>Project structure</summary>
 
 ```
 manifest.json            Extension manifest (MV3)
 _locales/en/             Every user-facing string
 icons/                   Toolbar and store icons
+assets/media-pack/       Store, README and social artwork plus sources
 docs/screenshots/        Images used in this README
-tools/make_icons.py      Regenerates icons/ (needs Pillow)
+tools/make_icons.py      Regenerates icons/
 src/
   newtab.html/.css       The new tab page and its design tokens (light and dark)
   app.js                 Rendering, events and keyboard handling for the new tab page
@@ -159,32 +129,26 @@ src/
   tiles.js               Tile rendering and the icon fallback chain
   favicon.js             Chrome favicon cache, remote icon lookup, generic-icon detection
   menu.js, toast.js      Context menu and undo notices
+  credits.js             Credit, version and support links
   popup.html/.js/.css    Toolbar popup for adding the current page
   background.js          Service worker: right-click menu entries and first-run setup
   config.js              Every tunable value in one place
 ```
 
-## Development
+</details>
 
-- Plain ES modules with no build step and no dependencies. Edit a file, then reload the extension in `chrome://extensions`.
-- Strings live in `_locales/en/messages.json`. To translate, add `_locales/<language>/messages.json` with the same keys.
-- Sizes, colours, timings and limits live in `src/config.js`; visual tokens live at the top of `src/newtab.css`.
-- `python tools/make_icons.py` redraws the icons in `icons/`.
+## Source rights
 
-## Support
-
-Speed Dial is free. If it makes your day a little faster, you can support its development with a donation:
-
-<p align="center"><a href="https://paypal.me/BashOM"><img src="https://img.shields.io/badge/Donate%20with-PayPal-003087?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate with PayPal"></a></p>
-
-The same link is in the extension: **Support** next to the credit on the new tab page, the **Support** section in Settings, and the toolbar popup.
+This repository does not currently grant an open-source license. All rights are reserved. The installation steps above are for using the current extension; reusing, modifying for redistribution, or commercializing the source requires the project owner's permission. Licensing terms may change later.
 
 ## Credits
 
-**Crafted By Bash.**
+**Crafted By Bash.** The credit also appears in the extension: on the new tab page, in the Settings panel and in the toolbar popup.
 
-The credit also appears in the extension itself: at the bottom right of the new tab page, at the foot of the Settings panel, and in the toolbar popup.
+## Support development
+
+Speed Dial is free to use. If it helps you, you can [make a one-time donation on PayPal](https://paypal.me/BashOM). Donations are optional and do not unlock features.
 
 ---
 
-<p align="center"><sub>Speed Dial 1.0.0 &middot; Crafted By Bash &middot; <a href="https://paypal.me/BashOM">Support on PayPal</a></sub></p>
+<p align="center"><sub>Speed Dial 1.0.0 &middot; Crafted By Bash</sub></p>
