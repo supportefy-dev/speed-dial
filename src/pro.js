@@ -30,13 +30,18 @@ function earlyBirdMailto() {
   return `mailto:${EARLY_BIRD.email}?${params.toString().replace(/\+/g, '%20')}`;
 }
 
-function renderDialog(reason) {
+function reasonText(reason, groups) {
+  if (reason === 'restore') return t('proReasonRestore', [String(groups), String(PRO.freeGroupLimit)]);
+  return t('proReasonGroups', [String(PRO.freeGroupLimit)]);
+}
+
+function renderDialog(reason, groups) {
   const status = licenseStatus();
   const offer = proOffer();
   $('pro-offer').hidden = status.pro;
   $('pro-active').hidden = !status.pro;
   $('pro-reason').hidden = !reason || status.pro;
-  if (reason) $('pro-reason').textContent = t('proReasonGroups', [String(PRO.freeGroupLimit)]);
+  if (reason) $('pro-reason').textContent = reasonText(reason, groups);
 
   if (status.pro) {
     $('pro-licensed').textContent = t('proLicensedTo', [status.email]);
@@ -72,8 +77,8 @@ export function renderProSettings() {
   $('pro-open-label').textContent = t(status.pro ? 'proManage' : 'proUpgrade');
 }
 
-export function openPro({ reason } = {}) {
-  renderDialog(reason);
+export function openPro({ reason, groups } = {}) {
+  renderDialog(reason, groups);
   setKeyError(null);
   keyForm.reset();
   if (!dialog.open) dialog.showModal();

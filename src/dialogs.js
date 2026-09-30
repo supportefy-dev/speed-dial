@@ -342,12 +342,13 @@ function initSettings() {
   $('data-export').addEventListener('click', () => actions.exportBackup());
   const backupInput = $('file-backup');
   $('data-restore').addEventListener('click', () => backupInput.click());
-  backupInput.addEventListener('change', () => {
+  backupInput.addEventListener('change', async () => {
     const file = backupInput.files[0];
     backupInput.value = '';
     if (!file) return;
     settingsDialog.close();
-    actions.restoreBackup(file);
+    const result = await actions.restoreBackup(file);
+    if (result?.blocked) openPro({ reason: 'restore', groups: result.groups });
   });
 }
 

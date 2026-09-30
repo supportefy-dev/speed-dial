@@ -90,6 +90,7 @@ export function proOffer(now = new Date()) {
 }
 
 export const canAddGroup = (groupCount) => status.pro || groupCount < PRO.freeGroupLimit;
+export const canRestoreGroups = (incoming, current) => status.pro || incoming <= Math.max(PRO.freeGroupLimit, current);
 
 if (globalThis.chrome?.storage?.onChanged) {
   chrome.storage.onChanged.addListener(async (changes, area) => {

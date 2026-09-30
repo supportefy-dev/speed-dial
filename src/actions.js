@@ -7,7 +7,9 @@ import {
   createTile,
   getBackground,
   setBackground,
+  normalize,
 } from './store.js';
+import { canRestoreGroups } from './license.js';
 import { showToast } from './toast.js';
 import { t } from './i18n.js';
 import { normalizeUrl, shortTitle, tileLabel } from './urls.js';
@@ -175,6 +177,8 @@ export async function restoreBackup(file) {
     payload = null;
   }
   if (payload?.format !== EXPORT_FORMAT || !payload.data) return showToast(t('toastRestoreInvalid'));
+  const incomingGroups = normalize(payload.data).groups.length;
+  if (!canRestoreGroups(incomingGroups, getState().groups.length)) return { blocked: true, groups: incomingGroups };
   const before = snapshot();
   const beforeBackground = await getBackground();
   await replace(payload.data);

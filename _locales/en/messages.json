@@ -622,5 +622,16 @@
   },
   "proBadge": {
     "message": "Pro"
+  },
+  "proReasonRestore": {
+    "message": "This backup has $ARG1$ groups. The free version restores up to $ARG2$ groups, so nothing was changed. Activate Pro, then restore the backup again.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      },
+      "arg2": {
+        "content": "$2"
+      }
+    }
   }
 }
