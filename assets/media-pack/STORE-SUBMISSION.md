@@ -86,7 +86,7 @@ Speed Dial replaces the new tab page with the user's own dial of website shortcu
 
 - **Visibility:** Public
 - **Regions:** All regions
-- **Pricing:** Free. Declare that the item contains **in-app purchases**: Speed Dial Pro is an optional one-time purchase ($3.99; $2.99 launch price until 31 October 2026) paid through PayPal outside the store. The free version keeps every feature with up to 3 groups.
+- **Payments:** choose **Contains in-app purchases**, not "Free of charge". It's one choice or the other, and "Free of charge" means the item has no way to buy anything. Speed Dial Pro is an optional one-time purchase ($3.99; $2.99 launch price until 31 October 2026) paid through PayPal outside the store. The free version keeps every feature with up to 3 groups.
 
 ## Notes for the reviewer
 
