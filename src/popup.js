@@ -4,12 +4,12 @@ import { h, hydrateIcons } from './dom.js';
 import { normalizeUrl, shortTitle, hostLabel } from './urls.js';
 import { renderTile } from './tiles.js';
 import { applyCredits } from './credits.js';
-import { POPUP_CLOSE_MS, NEW_TAB_URL } from './config.js';
+import { POPUP_CLOSE_MS } from './config.js';
 
 const $ = (id) => document.getElementById(id);
 const form = $('add-form');
 
-const openSpeedDial = () => chrome.tabs.create({ url: NEW_TAB_URL }).then(() => window.close());
+const openSpeedDial = () => chrome.tabs.create({ url: chrome.runtime.getURL(chrome.runtime.getManifest().chrome_url_overrides.newtab) }).then(() => window.close());
 
 function applyTheme(theme) {
   if (theme === 'auto') delete document.documentElement.dataset.theme;

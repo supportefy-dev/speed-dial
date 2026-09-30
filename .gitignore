@@ -18,3 +18,6 @@ venv/
 
 # Logs
 *.log
+
+# Build output from tools/build.py
+dist/

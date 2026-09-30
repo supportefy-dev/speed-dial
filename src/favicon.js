@@ -1,5 +1,7 @@
 import { FAVICON_PX, FAVICON_PROBE_PX, FAVICON_PROBE_URL, REMOTE_FAVICON_URL, REMOTE_FAVICON_PX } from './config.js';
 
+export const hasFaviconCache = () => chrome.runtime.getManifest().permissions?.includes('favicon') ?? false;
+
 export function faviconUrl(pageUrl, size = FAVICON_PX) {
   const url = new URL(chrome.runtime.getURL('/_favicon/'));
   url.searchParams.set('pageUrl', pageUrl);

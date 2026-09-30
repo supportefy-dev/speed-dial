@@ -425,7 +425,7 @@ function bindSearch() {
   });
   els.search.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (query) chrome.search.query({ text: query, disposition: 'CURRENT_TAB' });
+    if (query) actions.searchWeb(query);
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey || els.search.hidden) return;

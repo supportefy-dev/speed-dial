@@ -7,11 +7,11 @@ Thanks for helping improve Speed Dial.
 - Search existing issues before opening a new one.
 - Keep proposals focused on organizing tabs, reliability, accessibility, privacy, or maintainability.
 - Do not introduce telemetry, remote code, or unnecessary permissions.
-- This repository has no open-source license (see [Source rights](README.md#source-rights) in the README). Reporting a bug or suggesting a feature needs nothing from you but the report. A code contribution needs the project owner's agreement before you put in the work, since there is no license that grants you the right to have it merged or reused. Open an issue first and say what you would like to change.
+- This repository has no open-source license (see [Source rights](README.md#source-rights) in the README). Reporting a bug or suggesting a feature needs nothing from you but the report. A code contribution needs written agreement from Supportefy LLC, the copyright holder, before you put in the work, since there is no license that grants you the right to have it merged or reused. Open an issue first and say what you would like to change.
 
 ## Development
 
-The extension uses plain ES modules with no build step and no runtime dependencies. Load the repository folder directly from `chrome://extensions` using **Load unpacked**.
+The extension uses plain ES modules with no runtime dependencies. Load the repository folder directly in Chrome or Edge using **Load unpacked**. Run `python tools/build.py` to produce the Chromium and Firefox packages in `dist/`, and test a change in both when it touches browser APIs.
 
 Run the static checks before submitting a change:
 

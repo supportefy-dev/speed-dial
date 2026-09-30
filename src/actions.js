@@ -35,6 +35,12 @@ export function openUrl(url, where = 'current', active = true) {
   return chrome.tabs.update({ url });
 }
 
+export function searchWeb(text) {
+  const api = globalThis.browser?.search ?? chrome.search;
+  if (typeof api.query === 'function') return api.query({ text, disposition: 'CURRENT_TAB' });
+  return api.search({ query: text });
+}
+
 export function openAll(groupId) {
   for (const tile of groupTiles(groupId)) chrome.tabs.create({ url: tile.url, active: false });
 }

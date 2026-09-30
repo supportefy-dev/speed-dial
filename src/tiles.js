@@ -1,6 +1,6 @@
 import { h, icon } from './dom.js';
 import { t } from './i18n.js';
-import { faviconUrl, remoteFaviconUrl, isGenericFavicon } from './favicon.js';
+import { faviconUrl, remoteFaviconUrl, isGenericFavicon, hasFaviconCache } from './favicon.js';
 import { tileLabel } from './urls.js';
 import { readableTextOn } from './color.js';
 
@@ -32,7 +32,12 @@ export function paintWell(well, tile, group, { remoteIcons = false } = {}) {
 
   const img = h('img', { alt: '', draggable: 'false', decoding: 'async' });
   img.addEventListener('error', fallback);
-  if (type === 'auto') {
+  if (type === 'auto' && !hasFaviconCache()) {
+    const remote = remoteIcons ? remoteFaviconUrl(tile.url) : null;
+    if (!remote) return fallback();
+    img.className = 'favicon';
+    img.src = remote;
+  } else if (type === 'auto') {
     const remote = remoteIcons ? remoteFaviconUrl(tile.url) : null;
     well.classList.add('pending');
     img.className = 'favicon';

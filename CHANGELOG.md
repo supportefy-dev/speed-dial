@@ -2,6 +2,20 @@
 
 All notable changes to Speed Dial are documented in this file.
 
+## 1.2.0 - 2026-09-30
+
+### Added
+
+- Firefox support (preview): a separate Firefox package built by `tools/build.py`, with a Firefox manifest, the background code run as a module script, and site icons from the online lookup because Firefox has no extension icon cache.
+- Tiles can point at internal pages of Edge, Brave, Opera and Vivaldi (`edge://`, `brave://`, `opera://`, `vivaldi://`).
+- A browser support table and per-browser install steps in the README.
+- A LICENSE file: Copyright (c) 2026 Supportefy LLC. All rights reserved.
+
+### Changed
+
+- The popup's **Open Speed Dial** button opens Speed Dial itself, so it also works in browsers that do not let extensions replace the new tab (Opera, Arc).
+- Web search uses whichever search API the browser provides.
+
 ## 1.1.0 - 2026-09-30
 
 ### Added

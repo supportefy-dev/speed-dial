@@ -37,7 +37,18 @@ export const DEFAULT_SETTINGS = {
   collapsed: [],
 };
 
-export const ALLOWED_SCHEMES = ['http:', 'https:', 'chrome:', 'chrome-extension:', 'file:'];
+export const ALLOWED_SCHEMES = [
+  'http:',
+  'https:',
+  'file:',
+  'chrome:',
+  'chrome-extension:',
+  'edge:',
+  'brave:',
+  'opera:',
+  'vivaldi:',
+  'moz-extension:',
+];
 const TITLE_DASHES = String.fromCodePoint(0x2013, 0x2014, 0xb7);
 export const TITLE_SEPARATORS = new RegExp(` [|${TITLE_DASHES}-] `);
 export const MIN_SHORT_TITLE = 3;
@@ -67,7 +78,6 @@ export const POPUP_CLOSE_MS = 900;
 export const TOP_SITES_LIMIT = 12;
 export const MENU_OFFSET_PX = 6;
 export const VIEWPORT_MARGIN_PX = 8;
-export const NEW_TAB_URL = 'chrome://newtab/';
 export const DONATE_URL = 'https://paypal.me/BashOM';
 
 export const LICENSE_STORAGE_KEY = 'speedDialLicense';

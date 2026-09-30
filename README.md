@@ -9,6 +9,8 @@
 <p align="center">
   <img alt="Version 1.1.0" src="https://img.shields.io/badge/version-1.1.0-4f8ef7?style=flat-square">
   <img alt="Chrome 116+" src="https://img.shields.io/badge/Chrome-116%2B-4f8ef7?style=flat-square&logo=googlechrome&logoColor=white">
+  <img alt="Edge" src="https://img.shields.io/badge/Edge-supported-0078d7?style=flat-square&logo=microsoftedge&logoColor=white">
+  <img alt="Firefox 128+ preview" src="https://img.shields.io/badge/Firefox-128%2B%20preview-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
   <img alt="No account, no server" src="https://img.shields.io/badge/account-none%20required-34c38f?style=flat-square">
   <a href="https://paypal.me/BashOM"><img alt="Donate with PayPal" src="https://img.shields.io/badge/donate-PayPal-0070BA?style=flat-square&logo=paypal&logoColor=white"></a>
 </p>
@@ -25,26 +27,49 @@
   <a href="https://github.com/supportefy-dev/speed-dial/issues">Report an issue</a>
 </p>
 
-> Speed Dial is not on the Chrome Web Store yet. Install it from the release ZIP or from source, below. Requires Chrome 116 or newer.
+> Speed Dial is not in the browser stores yet. Install it from the release ZIP for your browser, below.
+
+## Browser support
+
+| Browser | Status | Package |
+|---|---|---|
+| Google Chrome 116+ | Supported. Full test suite passes. | `chromium` ZIP |
+| Microsoft Edge | Supported. Full test suite passes in Edge 154. | `chromium` ZIP |
+| Brave | Expected to work (same engine as Chrome), not tested yet. **Import most visited sites** may find nothing, because Brave turns that data off for privacy. | `chromium` ZIP |
+| Firefox 128+ | Preview. Its own build installs and opens in Firefox 155; the full test pass is still pending. Site icons come from the online icon lookup, because Firefox has no icon cache for extensions. | `firefox` ZIP |
+| Vivaldi | Works, but Vivaldi does not let extensions replace the new tab until you allow it in Vivaldi's settings. You can always open Speed Dial from its toolbar button. | `chromium` ZIP |
+| Opera, Arc | The new tab cannot be replaced (Opera keeps its own Speed Dial; Arc ignores new tab extensions). Open Speed Dial from the toolbar button and pin the tab. | `chromium` ZIP |
+| Safari | Not supported yet. It needs an Apple-signed app wrapper. | - |
 
 ## Install
 
-### From a release ZIP
+Download the ZIP for your browser from the [latest release](https://github.com/supportefy-dev/speed-dial/releases/latest) and unzip it to a folder you will keep; the browser loads the extension from that folder.
 
-1. Download `speed-dial-1.1.0.zip` from the [latest release](https://github.com/supportefy-dev/speed-dial/releases/latest) and unzip it.
-2. Open `chrome://extensions` and switch on **Developer mode** (top right).
+### Chrome, Edge, Brave, Vivaldi, Opera, Arc
+
+1. Use `speed-dial-<version>-chromium.zip`.
+2. Open the extensions page (`chrome://extensions`, `edge://extensions`, `brave://extensions`, and so on) and switch on **Developer mode**.
 3. Click **Load unpacked** and select the unzipped folder that contains `manifest.json`.
-4. Open a new tab. When Chrome asks whether to keep the changed new tab page, choose **Keep it**.
+4. Open a new tab. When the browser asks whether to keep the changed new tab page, choose **Keep it**.
 
-To update, download the new release ZIP, unzip it over the old folder, and press the reload icon on the Speed Dial card in `chrome://extensions`.
+To update, unzip the new release over the old folder and press the reload icon on the Speed Dial card.
+
+### Firefox (preview)
+
+1. Use `speed-dial-<version>-firefox.zip`.
+2. Open `about:debugging`, choose **This Firefox**, then **Load Temporary Add-on**, and pick the ZIP file.
+3. Open a new tab.
+
+Firefox removes temporary add-ons when it restarts. A permanent Firefox install needs the add-on to be signed by Mozilla, which will come with the addons.mozilla.org listing.
 
 ### From source
 
 ```bash
 git clone https://github.com/supportefy-dev/speed-dial.git
+python tools/build.py
 ```
 
-Then use **Load unpacked** and select the cloned repository folder.
+`tools/build.py` writes `dist/chromium/` and `dist/firefox/`; load the folder for your browser as above. The repository root itself also loads as-is in Chrome and Edge.
 
 ## What you can do
 
@@ -156,7 +181,7 @@ Speed Dial requests no host permissions and never reads the content of the pages
 
 ## Development
 
-The project uses plain ES modules with no build step and no runtime dependencies. Load the repository folder directly from `chrome://extensions` using **Load unpacked**, edit a file, then reload the extension card to see the change.
+The project uses plain ES modules with no runtime dependencies. In Chrome or Edge, load the repository folder directly with **Load unpacked**, edit a file, then reload the extension card to see the change. `python tools/build.py` produces the per-browser packages (`dist/chromium`, `dist/firefox`) and their ZIPs; the Firefox manifest is generated from `manifest.json`, so edit only the root manifest.
 
 Run the static checks before submitting a change:
 
@@ -208,7 +233,9 @@ src/
 
 ## Source rights
 
-This repository does not currently grant an open-source license. All rights are reserved. The installation steps above are for using the current extension; reusing, modifying for redistribution, or commercializing the source requires the project owner's permission. Licensing terms may change later.
+Copyright (c) 2026 Supportefy LLC. All rights reserved.
+
+This repository does not grant an open-source license (see [LICENSE](LICENSE)). The installation steps above are for using the extension; copying, modifying, redistributing or commercializing the source requires prior written permission from Supportefy LLC. A Speed Dial Pro key grants a personal right to use the Pro features, not rights to the source. Licensing terms may change later.
 
 ## Credits
 
@@ -222,4 +249,4 @@ You can also help by [reporting a bug](https://github.com/supportefy-dev/speed-d
 
 ---
 
-<p align="center"><sub>Speed Dial 1.1.0 &middot; Crafted By Bash</sub></p>
+<p align="center"><sub>Speed Dial 1.2.0 &middot; Crafted By Bash &middot; Copyright (c) 2026 Supportefy LLC</sub></p>
