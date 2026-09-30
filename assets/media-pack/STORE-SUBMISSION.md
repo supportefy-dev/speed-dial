@@ -1,6 +1,6 @@
 # Store submission sheet
 
-Paste-ready answers for the Chrome Web Store and Microsoft Edge Add-ons dashboards, for Speed Dial 1.2.0. Every answer matches the current code; if the code changes, update this sheet in the same commit.
+Paste-ready answers for the Chrome Web Store and Microsoft Edge Add-ons dashboards, for Speed Dial 1.2.1. Every answer matches the current code; if the code changes, update this sheet in the same commit.
 
 ## Before you start
 
@@ -8,12 +8,12 @@ Paste-ready answers for the Chrome Web Store and Microsoft Edge Add-ons dashboar
 |---|---|
 | Chrome Web Store developer account | https://chrome.google.com/webstore/devconsole (one-time $5 registration) |
 | Edge Add-ons developer account | https://partner.microsoft.com/dashboard/microsoftedge (free) |
-| Package | Run `python tools/build.py`, then upload `dist/speed-dial-1.2.0-chromium.zip` (manifest.json is at the zip root, as both stores require) |
+| Package | Run `python tools/build.py`, then upload `dist/speed-dial-1.2.1-chromium.zip` (manifest.json is at the zip root, as both stores require) |
 | Reviewer license key | Issue one just before submitting (see "Notes for the reviewer") and paste it only into the dashboard, never into this repository |
 
 ## Store listing
 
-**Name:** Speed Dial
+**Name:** Speed Dial: Groups & Tiles (the manifest name; the short name stays "Speed Dial")
 
 **Summary** (132 characters max; this one is 106):
 

@@ -325,4 +325,4 @@ You can also help by [reporting a bug](https://github.com/supportefy-dev/speed-d
 
 ---
 
-<p align="center"><sub>Speed Dial 1.2.0 &middot; Crafted By Bash &middot; Copyright (c) 2026 Supportefy LLC</sub></p>
+<p align="center"><sub>Speed Dial 1.2.1 &middot; Crafted By Bash &middot; Copyright (c) 2026 Supportefy LLC</sub></p>

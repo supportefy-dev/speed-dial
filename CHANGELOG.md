@@ -2,6 +2,13 @@
 
 All notable changes to Speed Dial are documented in this file.
 
+## 1.2.1 - 2026-09-30
+
+### Changed
+
+- The extension's full name is now **Speed Dial: Groups & Tiles**, the name used in the Chrome Web Store and Edge Add-ons. The short name shown in tight spaces stays "Speed Dial".
+- The Chrome Web Store screenshots were retaken from the current build, a sixth showing Speed Dial Pro was added, and a paste-ready store submission sheet was added (`assets/media-pack/STORE-SUBMISSION.md`).
+
 ## 1.2.0 - 2026-09-30
 
 ### Added
