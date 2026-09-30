@@ -1,0 +1,426 @@
+{
+  "extName": {
+    "message": "Speed Dial"
+  },
+  "extShortName": {
+    "message": "Speed Dial"
+  },
+  "extDescription": {
+    "message": "A fast, beautiful new tab speed dial with groups, colours and your own tile images."
+  },
+  "actionTitle": {
+    "message": "Add this page to Speed Dial"
+  },
+  "newTabTitle": {
+    "message": "New Tab"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "searchPlaceholder": {
+    "message": "Search the web or filter your sites"
+  },
+  "searchHintTitle": {
+    "message": "Press / to search"
+  },
+  "groups": {
+    "message": "Groups"
+  },
+  "sites": {
+    "message": "Sites"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "fieldUrl": {
+    "message": "Address"
+  },
+  "urlPlaceholder": {
+    "message": "example.com"
+  },
+  "fieldTitle": {
+    "message": "Title"
+  },
+  "titlePlaceholder": {
+    "message": "Shown under the tile"
+  },
+  "fieldGroup": {
+    "message": "Group"
+  },
+  "fieldImage": {
+    "message": "Image"
+  },
+  "imageAuto": {
+    "message": "Site icon"
+  },
+  "imageUpload": {
+    "message": "Upload"
+  },
+  "imageUrl": {
+    "message": "Link"
+  },
+  "imageLetter": {
+    "message": "Letter"
+  },
+  "imageAutoHint": {
+    "message": "Uses the icon Chrome already knows for this site. Sites you have never visited show a letter until you open them once."
+  },
+  "uploadPrompt": {
+    "message": "Choose an image, drop one here, or paste"
+  },
+  "uploadReplace": {
+    "message": "Replace image (choose, drop, or paste)"
+  },
+  "fieldImageUrl": {
+    "message": "Image address"
+  },
+  "imageUrlPlaceholder": {
+    "message": "https://example.com/logo.png"
+  },
+  "imageFill": {
+    "message": "Fill the whole tile"
+  },
+  "fieldTileColor": {
+    "message": "Tile colour"
+  },
+  "colorGroupDefault": {
+    "message": "Use the group colour"
+  },
+  "colorCustom": {
+    "message": "Custom colour"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "add": {
+    "message": "Add"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "addSite": {
+    "message": "Add site"
+  },
+  "addSiteTo": {
+    "message": "Add a site to $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "editSite": {
+    "message": "Edit site"
+  },
+  "newGroup": {
+    "message": "New group"
+  },
+  "editGroup": {
+    "message": "Edit group"
+  },
+  "deleteGroup": {
+    "message": "Delete group"
+  },
+  "fieldGroupName": {
+    "message": "Name"
+  },
+  "groupNamePlaceholder": {
+    "message": "Work, Tools, Reading..."
+  },
+  "fieldGroupColor": {
+    "message": "Colour"
+  },
+  "defaultGroupName": {
+    "message": "Home"
+  },
+  "untitledGroup": {
+    "message": "Untitled"
+  },
+  "tileOptions": {
+    "message": "Options for $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "groupOptions": {
+    "message": "Options for group $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openNewTab": {
+    "message": "Open in new tab"
+  },
+  "openNewWindow": {
+    "message": "Open in new window"
+  },
+  "openAll": {
+    "message": "Open all ($ARG1$) in new tabs",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "moveTo": {
+    "message": "Move to"
+  },
+  "keyDelete": {
+    "message": "Del"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "errorUrl": {
+    "message": "Enter a web address, like example.com"
+  },
+  "errorUpload": {
+    "message": "Choose an image first, or pick another image option."
+  },
+  "errorImageUrl": {
+    "message": "Enter a valid image address."
+  },
+  "errorNotImage": {
+    "message": "That file is not an image."
+  },
+  "errorReadImage": {
+    "message": "That image could not be read. Try a PNG, JPG, WebP or SVG."
+  },
+  "errorGroupName": {
+    "message": "Give the group a name."
+  },
+  "toastTileDeleted": {
+    "message": "Deleted $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastTileMoved": {
+    "message": "Moved $ARG1$ to $ARG2$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      },
+      "arg2": {
+        "content": "$2"
+      }
+    }
+  },
+  "toastTileAdded": {
+    "message": "Added $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastGroupDeleted": {
+    "message": "Deleted group $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastGroupDeletedWithSites": {
+    "message": "Deleted group $ARG1$ and its $ARG2$ sites",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      },
+      "arg2": {
+        "content": "$2"
+      }
+    }
+  },
+  "toastImportNothing": {
+    "message": "No new sites to import. Your most visited sites are already here."
+  },
+  "toastImported": {
+    "message": "Imported $ARG1$ sites",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastExported": {
+    "message": "Backup saved to your downloads"
+  },
+  "toastRestoreInvalid": {
+    "message": "That file is not a Speed Dial backup."
+  },
+  "toastRestored": {
+    "message": "Backup restored"
+  },
+  "emptyTitle": {
+    "message": "This group is empty"
+  },
+  "emptyBody": {
+    "message": "Add sites with the plus tile, drag links from the bookmarks bar, or bring in the sites you visit most."
+  },
+  "noMatches": {
+    "message": "No saved sites match \"$ARG1$\". Press Enter to search the web.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resultsCount": {
+    "message": "$ARG1$ saved sites match. Press Enter to search the web instead.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "importTopSites": {
+    "message": "Import most visited sites"
+  },
+  "exportBackup": {
+    "message": "Export backup"
+  },
+  "restoreBackup": {
+    "message": "Restore from backup"
+  },
+  "dataHint": {
+    "message": "Everything stays on this computer. Use a backup file to move your speed dial to another browser."
+  },
+  "sectionAppearance": {
+    "message": "Appearance"
+  },
+  "sectionBackground": {
+    "message": "Background"
+  },
+  "sectionBehavior": {
+    "message": "Behaviour"
+  },
+  "sectionData": {
+    "message": "Your data"
+  },
+  "sectionShortcuts": {
+    "message": "Keyboard shortcuts"
+  },
+  "settingTheme": {
+    "message": "Theme"
+  },
+  "themeAuto": {
+    "message": "Auto"
+  },
+  "themeDark": {
+    "message": "Dark"
+  },
+  "themeLight": {
+    "message": "Light"
+  },
+  "settingLayout": {
+    "message": "Groups"
+  },
+  "layoutTabs": {
+    "message": "Tabs"
+  },
+  "layoutSections": {
+    "message": "Sections"
+  },
+  "settingTileSize": {
+    "message": "Tile size"
+  },
+  "sizeSmall": {
+    "message": "S"
+  },
+  "sizeMedium": {
+    "message": "M"
+  },
+  "sizeLarge": {
+    "message": "L"
+  },
+  "settingColumns": {
+    "message": "Tiles per row (max)"
+  },
+  "settingShowTitles": {
+    "message": "Show titles"
+  },
+  "settingShowSearch": {
+    "message": "Show search box"
+  },
+  "backgroundChoose": {
+    "message": "Choose image"
+  },
+  "backgroundRemove": {
+    "message": "Remove"
+  },
+  "settingDim": {
+    "message": "Dim image"
+  },
+  "settingOpenInNewTab": {
+    "message": "Open sites in a new tab"
+  },
+  "shortcutSearch": {
+    "message": "Focus search"
+  },
+  "shortcutEdit": {
+    "message": "Edit the focused site or group"
+  },
+  "shortcutDelete": {
+    "message": "Delete the focused site"
+  },
+  "shortcutMove": {
+    "message": "Move the focused site"
+  },
+  "shortcutMenu": {
+    "message": "Open the options menu"
+  },
+  "menuAddPage": {
+    "message": "Add this page to Speed Dial"
+  },
+  "menuAddLink": {
+    "message": "Add link to Speed Dial"
+  },
+  "badgeAdded": {
+    "message": "+1"
+  },
+  "popupHeading": {
+    "message": "Add to Speed Dial"
+  },
+  "popupUnsupported": {
+    "message": "This page cannot be added to Speed Dial."
+  },
+  "popupAlreadySaved": {
+    "message": "Already saved in $ARG1$. Adding again makes a second tile.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAdded": {
+    "message": "Added to $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openSpeedDial": {
+    "message": "Open Speed Dial"
+  },
+  "settingRemoteIcons": {
+    "message": "Fetch missing site icons"
+  },
+  "remoteIconsHint": {
+    "message": "When Chrome has no icon cached for a site, ask Google's favicon service for it. Only the site's address is sent."
+  }
+}

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="newTabTitle"></title>
+    <script src="boot.js"></script>
+    <link rel="stylesheet" href="newtab.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <button type="button" class="icon-btn glass" id="settings-btn" data-icon="settings" data-i18n-aria="settings" data-i18n-title="settings"></button>
+    </header>
+
+    <main class="page">
+      <form class="search" id="search" role="search">
+        <span class="search-icon" data-icon="search"></span>
+        <input
+          id="search-input"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          enterkeyhint="search"
+          data-i18n-placeholder="searchPlaceholder"
+          data-i18n-aria="searchPlaceholder"
+        />
+        <kbd class="search-hint" data-i18n-title="searchHintTitle">/</kbd>
+      </form>
+
+      <nav class="groups" id="groups" role="tablist" data-i18n-aria="groups"></nav>
+
+      <section class="board" id="board" data-i18n-aria="sites"></section>
+    </main>
+
+    <div class="toast-region" id="toasts" aria-live="polite"></div>
+    <div class="menu" id="menu" role="menu" popover></div>
+
+    <dialog class="modal" id="tile-dialog" aria-labelledby="tile-dialog-title">
+      <form class="modal-body" id="tile-form" novalidate>
+        <header class="modal-head">
+          <h2 id="tile-dialog-title"></h2>
+          <button type="button" class="icon-btn" data-close data-icon="x" data-i18n-aria="close"></button>
+        </header>
+        <div class="modal-content editor">
+          <div class="editor-preview" id="tile-preview"></div>
+          <div class="editor-fields">
+            <label class="field">
+              <span data-i18n="fieldUrl"></span>
+              <input class="input" name="url" inputmode="url" autocomplete="off" spellcheck="false" data-i18n-placeholder="urlPlaceholder" aria-describedby="url-error" />
+            </label>
+            <p class="field-error" id="url-error" hidden></p>
+
+            <label class="field">
+              <span data-i18n="fieldTitle"></span>
+              <input class="input" name="title" autocomplete="off" />
+            </label>
+
+            <label class="field">
+              <span data-i18n="fieldGroup"></span>
+              <select class="input" name="group"></select>
+            </label>
+
+            <fieldset class="field">
+              <legend data-i18n="fieldImage"></legend>
+              <div class="segmented" role="radiogroup" data-i18n-aria="fieldImage">
+                <label><input type="radio" name="imageType" value="auto" /><span data-i18n="imageAuto"></span></label>
+                <label><input type="radio" name="imageType" value="upload" /><span data-i18n="imageUpload"></span></label>
+                <label><input type="radio" name="imageType" value="url" /><span data-i18n="imageUrl"></span></label>
+                <label><input type="radio" name="imageType" value="letter" /><span data-i18n="imageLetter"></span></label>
+              </div>
+            </fieldset>
+
+            <div class="image-panel" data-panel="auto">
+              <p class="hint" data-i18n="imageAutoHint"></p>
+            </div>
+            <div class="image-panel" data-panel="upload">
+              <button type="button" class="dropzone" id="dropzone">
+                <span data-icon="upload"></span>
+                <span id="dropzone-label"></span>
+              </button>
+              <input type="file" id="file-image" accept="image/*" hidden />
+            </div>
+            <div class="image-panel" data-panel="url">
+              <label class="field">
+                <span data-i18n="fieldImageUrl"></span>
+                <input class="input" name="imageUrl" inputmode="url" autocomplete="off" spellcheck="false" data-i18n-placeholder="imageUrlPlaceholder" />
+              </label>
+            </div>
+            <label class="check" data-panel="upload url">
+              <input type="checkbox" class="switch" name="fit" />
+              <span data-i18n="imageFill"></span>
+            </label>
+            <p class="field-error" id="image-error" hidden></p>
+
+            <fieldset class="field">
+              <legend data-i18n="fieldTileColor"></legend>
+              <div class="swatches" id="tile-swatches"></div>
+            </fieldset>
+          </div>
+        </div>
+        <footer class="modal-foot">
+          <button type="button" class="btn ghost-danger" id="tile-delete" data-icon="trash"><span data-i18n="delete"></span></button>
+          <span class="spacer"></span>
+          <button type="button" class="btn" data-close data-i18n="cancel"></button>
+          <button type="submit" class="btn primary" data-i18n="save"></button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="modal narrow" id="group-dialog" aria-labelledby="group-dialog-title">
+      <form class="modal-body" id="group-form" novalidate>
+        <header class="modal-head">
+          <h2 id="group-dialog-title"></h2>
+          <button type="button" class="icon-btn" data-close data-icon="x" data-i18n-aria="close"></button>
+        </header>
+        <div class="modal-content">
+          <div class="group-preview"><span class="pill" id="group-preview" aria-hidden="true"></span></div>
+          <label class="field">
+            <span data-i18n="fieldGroupName"></span>
+            <input class="input" name="name" autocomplete="off" maxlength="40" data-i18n-placeholder="groupNamePlaceholder" aria-describedby="group-error" />
+          </label>
+          <p class="field-error" id="group-error" hidden></p>
+          <fieldset class="field">
+            <legend data-i18n="fieldGroupColor"></legend>
+            <div class="swatches" id="group-swatches"></div>
+          </fieldset>
+        </div>
+        <footer class="modal-foot">
+          <button type="button" class="btn ghost-danger" id="group-delete" data-icon="trash"><span data-i18n="deleteGroup"></span></button>
+          <span class="spacer"></span>
+          <button type="button" class="btn" data-close data-i18n="cancel"></button>
+          <button type="submit" class="btn primary" data-i18n="save"></button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog class="sheet" id="settings-dialog" aria-labelledby="settings-title">
+      <form class="sheet-body" id="settings-form">
+        <header class="modal-head">
+          <h2 id="settings-title" data-i18n="settings"></h2>
+          <button type="button" class="icon-btn" data-close data-icon="x" data-i18n-aria="close"></button>
+        </header>
+
+        <div class="sheet-content">
+          <section class="settings-group">
+            <h3 data-i18n="sectionAppearance"></h3>
+            <div class="row">
+              <span data-i18n="settingTheme"></span>
+              <div class="segmented" role="radiogroup" data-i18n-aria="settingTheme">
+                <label><input type="radio" name="theme" value="auto" /><span data-i18n="themeAuto"></span></label>
+                <label><input type="radio" name="theme" value="dark" /><span data-i18n="themeDark"></span></label>
+                <label><input type="radio" name="theme" value="light" /><span data-i18n="themeLight"></span></label>
+              </div>
+            </div>
+            <div class="row">
+              <span data-i18n="settingLayout"></span>
+              <div class="segmented" role="radiogroup" data-i18n-aria="settingLayout">
+                <label><input type="radio" name="layout" value="tabs" /><span data-i18n="layoutTabs"></span></label>
+                <label><input type="radio" name="layout" value="sections" /><span data-i18n="layoutSections"></span></label>
+              </div>
+            </div>
+            <div class="row">
+              <span data-i18n="settingTileSize"></span>
+              <div class="segmented" role="radiogroup" data-i18n-aria="settingTileSize">
+                <label><input type="radio" name="tileSize" value="s" /><span data-i18n="sizeSmall"></span></label>
+                <label><input type="radio" name="tileSize" value="m" /><span data-i18n="sizeMedium"></span></label>
+                <label><input type="radio" name="tileSize" value="l" /><span data-i18n="sizeLarge"></span></label>
+              </div>
+            </div>
+            <label class="row">
+              <span data-i18n="settingColumns"></span>
+              <span class="range"><input type="range" name="maxColumns" /><output id="columns-out"></output></span>
+            </label>
+            <label class="row">
+              <span data-i18n="settingShowTitles"></span>
+              <input type="checkbox" class="switch" name="showTitles" />
+            </label>
+            <label class="row">
+              <span data-i18n="settingShowSearch"></span>
+              <input type="checkbox" class="switch" name="showSearch" />
+            </label>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionBackground"></h3>
+            <div class="bg-picker">
+              <div class="bg-thumb" id="bg-thumb" data-icon="image"></div>
+              <div class="bg-actions">
+                <button type="button" class="btn" id="bg-choose" data-icon="upload"><span data-i18n="backgroundChoose"></span></button>
+                <button type="button" class="btn ghost-danger" id="bg-remove" data-i18n="backgroundRemove"></button>
+              </div>
+              <input type="file" id="file-background" accept="image/*" hidden />
+            </div>
+            <label class="row" id="dim-row">
+              <span data-i18n="settingDim"></span>
+              <span class="range"><input type="range" name="backgroundDim" /><output id="dim-out"></output></span>
+            </label>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionBehavior"></h3>
+            <label class="row">
+              <span data-i18n="settingOpenInNewTab"></span>
+              <input type="checkbox" class="switch" name="openInNewTab" />
+            </label>
+            <label class="row">
+              <span data-i18n="settingRemoteIcons"></span>
+              <input type="checkbox" class="switch" name="remoteIcons" />
+            </label>
+            <p class="hint" data-i18n="remoteIconsHint"></p>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionData"></h3>
+            <div class="stack">
+              <button type="button" class="btn block" id="data-import-top" data-icon="history"><span data-i18n="importTopSites"></span></button>
+              <button type="button" class="btn block" id="data-export" data-icon="download"><span data-i18n="exportBackup"></span></button>
+              <button type="button" class="btn block" id="data-restore" data-icon="upload"><span data-i18n="restoreBackup"></span></button>
+              <input type="file" id="file-backup" accept="application/json,.json" hidden />
+            </div>
+            <p class="hint" data-i18n="dataHint"></p>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionShortcuts"></h3>
+            <dl class="shortcuts">
+              <dt><kbd>/</kbd></dt><dd data-i18n="shortcutSearch"></dd>
+              <dt><kbd>F2</kbd></dt><dd data-i18n="shortcutEdit"></dd>
+              <dt><kbd>Del</kbd></dt><dd data-i18n="shortcutDelete"></dd>
+              <dt><kbd>Alt</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></dt><dd data-i18n="shortcutMove"></dd>
+              <dt><kbd>Shift</kbd> <kbd>F10</kbd></dt><dd data-i18n="shortcutMenu"></dd>
+            </dl>
+          </section>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

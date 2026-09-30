@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title data-i18n="actionTitle"></title>
+    <script src="boot.js"></script>
+    <link rel="stylesheet" href="newtab.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <script type="module" src="popup.js"></script>
+  </head>
+  <body class="popup">
+    <form id="add-form" novalidate hidden>
+      <header class="popup-head">
+        <div id="popup-preview"></div>
+        <div class="popup-heading">
+          <h1 data-i18n="popupHeading"></h1>
+          <p class="popup-url" id="popup-url"></p>
+        </div>
+      </header>
+      <p class="popup-note" id="popup-note" hidden></p>
+      <label class="field">
+        <span data-i18n="fieldTitle"></span>
+        <input class="input" name="title" autocomplete="off" />
+      </label>
+      <label class="field">
+        <span data-i18n="fieldGroup"></span>
+        <select class="input" name="group"></select>
+      </label>
+      <div class="popup-actions">
+        <button type="button" class="btn" id="popup-open" data-icon="grid"><span data-i18n="openSpeedDial"></span></button>
+        <button type="submit" class="btn primary" data-icon="plus"><span data-i18n="add"></span></button>
+      </div>
+    </form>
+
+    <div class="popup-state" id="popup-done" hidden>
+      <span class="popup-check" data-icon="check"></span>
+      <p id="popup-done-text"></p>
+    </div>
+
+    <div class="popup-state" id="popup-unsupported" hidden>
+      <p data-i18n="popupUnsupported"></p>
+      <button type="button" class="btn" id="popup-open-alt" data-icon="grid"><span data-i18n="openSpeedDial"></span></button>
+    </div>
+  </body>
+</html>
