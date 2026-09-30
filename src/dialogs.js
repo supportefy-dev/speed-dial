@@ -1,6 +1,6 @@
 import { getState, update, createTile, createGroup, getBackground, setBackground, onBackgroundChange } from './store.js';
 import { t } from './i18n.js';
-import { h, debounce } from './dom.js';
+import { h, debounce, bindModal } from './dom.js';
 import { renderTile } from './tiles.js';
 import { normalizeUrl, hostLabel } from './urls.js';
 import { resizeImage, clipboardImage, isImageFile } from './images.js';
@@ -16,6 +16,8 @@ import {
   DIM_RANGE,
 } from './config.js';
 import * as actions from './actions.js';
+import { canAddGroup } from './license.js';
+import { openPro, renderProSettings } from './pro.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -60,17 +62,6 @@ function setError(el, input, key) {
   el.hidden = !key;
   el.textContent = key ? t(key) : '';
   input?.setAttribute('aria-invalid', String(Boolean(key)));
-}
-
-function bindModal(dialog) {
-  let pressedOnBackdrop = false;
-  dialog.addEventListener('pointerdown', (e) => {
-    pressedOnBackdrop = e.target === dialog;
-  });
-  dialog.addEventListener('click', (e) => {
-    if (e.target === dialog && pressedOnBackdrop) dialog.close();
-  });
-  for (const button of dialog.querySelectorAll('[data-close]')) button.addEventListener('click', () => dialog.close());
 }
 
 const tileDialog = $('tile-dialog');
@@ -230,6 +221,7 @@ function refreshGroupPreview() {
 export function openGroupEditor(groupId) {
   const state = getState();
   const group = groupId && state.groups.find((g) => g.id === groupId);
+  if (!group && !canAddGroup(state.groups.length)) return openPro({ reason: 'groups' });
   groupDraftId = group?.id ?? null;
   $('group-dialog-title').textContent = t(group ? 'editGroup' : 'newGroup');
   groupForm.elements.name.value = group?.name ?? '';
@@ -296,6 +288,7 @@ export async function openSettings() {
   $('columns-out').textContent = settings.maxColumns;
   $('dim-out').textContent = percent(settings.backgroundDim);
   renderBackgroundThumb(await getBackground());
+  renderProSettings();
   settingsDialog.showModal();
 }
 

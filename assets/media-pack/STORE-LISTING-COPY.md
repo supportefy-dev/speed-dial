@@ -23,7 +23,11 @@ Speed Dial turns a new Chrome tab into an organized home for the sites you use. 
 
 Groups, tiles, settings, uploaded images, and the background are stored in Chrome's local extension storage. If **Fetch missing site icons** is enabled and Chrome has no icon for a site, Speed Dial can ask Google's favicon service for that site's origin. You can turn this lookup off in Settings. A linked tile image loads from the image host you specify. Searching the web uses your default search engine.
 
+Free to use with up to 3 groups. Speed Dial Pro is an optional one-time purchase ($3.99, $2.99 launch price until 31 October 2026) that unlocks unlimited groups and every future Pro feature. Early bird: Pro is free forever for the first 100 users. Email bash@supportefy.com to claim your key.
+
 Chrome 116 or newer is required. Speed Dial replaces Chrome's new tab page after installation.
+
+Store dashboard: declare that the item has in-app purchases (paid through PayPal, outside the Chrome Web Store).
 
 ## URLs to verify before submission
 

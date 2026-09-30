@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a reproducible new tab or settings problem.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting a problem. Do not attach backup files or license keys.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: 1.1.0
+    validations:
+      required: true
+  - type: input
+    id: chrome
+    attributes:
+      label: Chrome version and operating system
+      placeholder: Chrome 140 on Windows 11
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - New tab (tiles, groups, layout)
+        - Drag and drop
+        - Search
+        - Settings (theme, background, sizes)
+        - Backup and restore
+        - Toolbar popup or context menu
+        - Speed Dial Pro (license, groups)
+        - Other / not area-specific
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest reliable sequence that triggers the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed personal site addresses, uploaded images, backup files, and license keys from this report.
+          required: true

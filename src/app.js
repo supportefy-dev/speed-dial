@@ -8,6 +8,8 @@ import { expireToast } from './toast.js';
 import { initDialogs, openTileEditor, openGroupEditor, openSettings } from './dialogs.js';
 import { initDnd } from './dnd.js';
 import { applyCredits } from './credits.js';
+import { loadLicense, onLicenseChange, canAddGroup } from './license.js';
+import { initPro } from './pro.js';
 import { resizeImage, isImageFile } from './images.js';
 import { ICON_MAX_PX, ICON_QUALITY } from './config.js';
 import * as actions from './actions.js';
@@ -105,8 +107,17 @@ function renderSection(state, group) {
   );
 }
 
-function renderAddSection() {
-  return h('button', { type: 'button', class: 'add-section', 'data-action': 'add-group' }, icon('plus'), t('newGroup'));
+const proBadge = () => h('span', { class: 'pro-badge' }, t('proBadge'));
+
+function renderAddSection(state) {
+  const locked = !canAddGroup(state.groups.length);
+  return h(
+    'button',
+    { type: 'button', class: `add-section${locked ? ' locked' : ''}`, 'data-action': 'add-group', title: locked ? t('proLockedGroup') : null },
+    icon('plus'),
+    t('newGroup'),
+    locked && proBadge(),
+  );
 }
 
 function renderResults(state) {
@@ -146,7 +157,19 @@ function renderGroupsBar(state) {
       h('span', { class: 'count' }, String(counts.get(group.id) ?? 0)),
     );
   });
-  const add = h('button', { type: 'button', class: 'pill pill-add', 'data-action': 'add-group', 'aria-label': t('newGroup'), title: t('newGroup') }, icon('plus'));
+  const locked = !canAddGroup(state.groups.length);
+  const add = h(
+    'button',
+    {
+      type: 'button',
+      class: `pill pill-add${locked ? ' locked' : ''}`,
+      'data-action': 'add-group',
+      'aria-label': locked ? t('proLockedGroup') : t('newGroup'),
+      title: locked ? t('proLockedGroup') : t('newGroup'),
+    },
+    icon('plus'),
+    locked && proBadge(),
+  );
   flip(els.groups, () => els.groups.replaceChildren(...pills, add));
 }
 
@@ -157,7 +180,7 @@ function renderBoard(state) {
   lastView = view;
   let content;
   if (query) content = renderResults(state);
-  else if (layout === 'sections') content = [...state.groups.map((group) => renderSection(state, group)), renderAddSection()];
+  else if (layout === 'sections') content = [...state.groups.map((group) => renderSection(state, group)), renderAddSection(state)];
   else content = renderTabsView(state, enter);
   els.board.dataset.layout = query ? 'results' : layout;
   flip(els.board, () => els.board.replaceChildren(...[content].flat().filter(Boolean)));
@@ -423,6 +446,7 @@ async function init() {
   applyCredits(document);
   initMenu();
   initDialogs();
+  initPro();
   bindBoard();
   bindSearch();
   document.getElementById('settings-btn').addEventListener('click', openSettings);
@@ -454,8 +478,9 @@ async function init() {
     },
   });
 
-  await load();
+  await Promise.all([load(), loadLicense()]);
   render();
+  onLicenseChange(render);
   subscribe(() => {
     render();
     expireToast(getVersion());

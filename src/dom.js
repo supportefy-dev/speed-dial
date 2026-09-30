@@ -54,6 +54,17 @@ export function leave(el) {
   Promise.all(running.map((a) => a.finished)).then(() => el.remove(), () => el.remove());
 }
 
+export function bindModal(dialog) {
+  let pressedOnBackdrop = false;
+  dialog.addEventListener('pointerdown', (e) => {
+    pressedOnBackdrop = e.target === dialog;
+  });
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog && pressedOnBackdrop) dialog.close();
+  });
+  for (const button of dialog.querySelectorAll('[data-close]')) button.addEventListener('click', () => dialog.close());
+}
+
 export function debounce(fn, ms) {
   let timer;
   return (...args) => {

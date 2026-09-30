@@ -451,5 +451,176 @@
   },
   "supportHint": {
     "message": "Speed Dial is free. If it makes your day a little faster, a small donation keeps it improving."
+  },
+  "sectionPro": {
+    "message": "Speed Dial Pro"
+  },
+  "proStatusFree": {
+    "message": "Free plan: $ARG1$ of $ARG2$ groups used.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      },
+      "arg2": {
+        "content": "$2"
+      }
+    }
+  },
+  "proStatusOver": {
+    "message": "Free plan: you have $ARG1$ groups. Creating more needs Pro.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "proStatusActive": {
+    "message": "Pro is active. Licensed to $ARG1$.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "proUpgrade": {
+    "message": "Get Speed Dial Pro"
+  },
+  "proManage": {
+    "message": "Manage your Pro license"
+  },
+  "proTitle": {
+    "message": "Speed Dial Pro"
+  },
+  "proTagline": {
+    "message": "One purchase, yours forever. No subscription."
+  },
+  "proReasonGroups": {
+    "message": "The free version includes up to $ARG1$ groups. Pro removes the limit.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "earlyBirdTitle": {
+    "message": "Early bird: the first $ARG1$ users get Pro free, forever",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "earlyBirdText": {
+    "message": "Email us to claim your key. It includes every future Pro feature."
+  },
+  "earlyBirdClaim": {
+    "message": "Claim a free key"
+  },
+  "earlyBirdAlt": {
+    "message": "No email app? Write to $ARG1$ with the subject \"$ARG2$\".",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      },
+      "arg2": {
+        "content": "$2"
+      }
+    }
+  },
+  "earlyBirdSubject": {
+    "message": "Speed Dial early bird key"
+  },
+  "earlyBirdBody": {
+    "message": "Hi, I would like a free early-bird Speed Dial Pro license. Please send the key to this email address."
+  },
+  "proFeatureGroups": {
+    "message": "Unlimited groups"
+  },
+  "proComingLabel": {
+    "message": "Coming to Pro, included at no extra cost"
+  },
+  "proComingIncluded": {
+    "message": "Coming soon, already included in your license"
+  },
+  "proFeatureSync": {
+    "message": "Sync across your computers"
+  },
+  "proFeatureBackups": {
+    "message": "Automatic weekly backups"
+  },
+  "proFeatureBookmarks": {
+    "message": "Groups that mirror a bookmarks folder"
+  },
+  "proFeaturePrivate": {
+    "message": "Private groups hidden behind a PIN"
+  },
+  "proFeatureStyle": {
+    "message": "Style pack: extra themes, rotating backgrounds and a clock"
+  },
+  "proOnce": {
+    "message": "one-time"
+  },
+  "proLaunch": {
+    "message": "Launch price until $ARG1$.",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "proBuy": {
+    "message": "Buy with PayPal for $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "proBuyHint": {
+    "message": "After paying, your license key is emailed to your PayPal address."
+  },
+  "proKeyLabel": {
+    "message": "Already have a license key?"
+  },
+  "proKeyPlaceholder": {
+    "message": "Paste your BASH1- key"
+  },
+  "proActivate": {
+    "message": "Activate"
+  },
+  "proActiveTitle": {
+    "message": "Speed Dial Pro is active"
+  },
+  "proLicensedTo": {
+    "message": "Licensed to $ARG1$",
+    "placeholders": {
+      "arg1": {
+        "content": "$1"
+      }
+    }
+  },
+  "proRemove": {
+    "message": "Remove license from this browser"
+  },
+  "proErrorFormat": {
+    "message": "That does not look like a Speed Dial license key. Copy the whole key from your email."
+  },
+  "proErrorSignature": {
+    "message": "This key is not valid. Copy the whole key from your email and try again."
+  },
+  "proErrorProduct": {
+    "message": "This key is for a different product."
+  },
+  "toastProActivated": {
+    "message": "Speed Dial Pro is active. Thank you!"
+  },
+  "toastProRemoved": {
+    "message": "Pro license removed from this browser"
+  },
+  "proLockedGroup": {
+    "message": "Unlimited groups with Speed Dial Pro"
+  },
+  "proBadge": {
+    "message": "Pro"
   }
 }

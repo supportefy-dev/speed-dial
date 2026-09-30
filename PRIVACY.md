@@ -1,8 +1,10 @@
 # Speed Dial privacy policy
 
-Effective 2026-09-30. Applies to the Speed Dial Chrome extension, version 1.0.0 and later.
+Effective 2026-09-30. Applies to the Speed Dial Chrome extension, version 1.0.0 and later (Pro licensing from 1.1.0).
 
-Speed Dial is a new tab page for your own list of sites. It has no account, no analytics, no advertising and no server run by its developer. The developer does not receive, collect, sell or share any of your data.
+Speed Dial is a new tab page for your own list of sites. It has no account, no analytics, no advertising and no server run by its developer. The extension never sends your data to the developer, and the developer does not sell or share your data.
+
+The one exception is Speed Dial Pro: if you buy a license or claim an early-bird key, the developer receives your email address (from PayPal's payment notice, or from the email you send) and uses it only to send you your license key.
 
 ## What is stored, and where
 
@@ -34,6 +36,13 @@ Turning off **Fetch missing site icons** stops the favicon requests; those tiles
 - **Site icons** are read from Chrome's own favicon cache.
 
 Speed Dial has no host permissions and never reads the content of the pages you visit.
+
+## Speed Dial Pro license
+
+- Buying Pro happens on PayPal's own website, under PayPal's privacy terms. Speed Dial only opens the payment page; it never sees your payment details.
+- Early-bird keys are requested by an email you send from your own email app.
+- Your license key contains the email address it was issued to, the issue date and the product name. It is stored in `chrome.storage.local`, verified on your device with a digital signature, and never sent anywhere. It is not included in exported backups.
+- Removing the license in **Settings > Speed Dial Pro** deletes it from the browser.
 
 ## Backups
 

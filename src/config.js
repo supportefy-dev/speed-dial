@@ -69,3 +69,23 @@ export const MENU_OFFSET_PX = 6;
 export const VIEWPORT_MARGIN_PX = 8;
 export const NEW_TAB_URL = 'chrome://newtab/';
 export const DONATE_URL = 'https://paypal.me/BashOM';
+
+export const LICENSE_STORAGE_KEY = 'speedDialLicense';
+export const PRO = {
+  product: 'speed-dial-pro',
+  keyPrefix: 'BASH1-',
+  formatVersion: 1,
+  publicKey:
+    'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPMsagPYeN2co6gKUxcYHg/FZqdF4e/tlg06QZWSG4iTuZkXP3vhfpvXVoD1QkBxek9eGviIHzeT6SSRaLu1lcA==',
+  freeGroupLimit: 3,
+  currency: 'USD',
+  price: 3.99,
+  launchPrice: 2.99,
+  launchEnds: '2026-10-31T23:59:59Z',
+  paypalMe: 'https://www.paypal.com/paypalme/BashOM',
+};
+export const EARLY_BIRD = {
+  open: true,
+  limit: 100,
+  email: 'bash@supportefy.com',
+};

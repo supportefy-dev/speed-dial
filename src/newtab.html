@@ -139,6 +139,65 @@
       </form>
     </dialog>
 
+    <dialog class="modal narrow pro-modal" id="pro-dialog" aria-labelledby="pro-title">
+      <div class="modal-body">
+        <header class="modal-head">
+          <h2 id="pro-title" data-i18n="proTitle"></h2>
+          <button type="button" class="icon-btn" data-close data-icon="x" data-i18n-aria="close"></button>
+        </header>
+        <div class="modal-content">
+          <p class="pro-reason" id="pro-reason" hidden></p>
+
+          <div id="pro-offer">
+            <p class="pro-tagline" data-i18n="proTagline"></p>
+
+            <div class="early-bird" id="early-bird" hidden>
+              <span class="early-bird-icon" data-icon="gift"></span>
+              <div>
+                <p class="early-bird-title" id="early-bird-title"></p>
+                <p class="early-bird-text" data-i18n="earlyBirdText"></p>
+                <a class="btn primary" id="early-bird-claim" data-icon="gift"><span data-i18n="earlyBirdClaim"></span></a>
+                <p class="early-bird-alt" id="early-bird-alt"></p>
+              </div>
+            </div>
+
+            <ul class="pro-list" id="pro-now"></ul>
+            <p class="pro-soon-label" data-i18n="proComingLabel"></p>
+            <ul class="pro-list soon" id="pro-soon"></ul>
+
+            <div class="pro-buy">
+              <div class="pro-price">
+                <span class="pro-amount" id="pro-amount"></span>
+                <s class="pro-regular" id="pro-regular" hidden></s>
+                <span class="pro-once" data-i18n="proOnce"></span>
+              </div>
+              <p class="pro-launch" id="pro-launch" hidden></p>
+              <a class="btn primary block" id="pro-buy" target="_blank" rel="noopener"><span id="pro-buy-label"></span></a>
+              <p class="hint" data-i18n="proBuyHint"></p>
+            </div>
+
+            <form class="pro-key" id="pro-key-form" novalidate>
+              <label class="field">
+                <span data-i18n="proKeyLabel"></span>
+                <input class="input" name="key" autocomplete="off" spellcheck="false" data-i18n-placeholder="proKeyPlaceholder" aria-describedby="pro-key-error" />
+              </label>
+              <p class="field-error" id="pro-key-error" hidden></p>
+              <button type="submit" class="btn block" data-i18n="proActivate"></button>
+            </form>
+          </div>
+
+          <div class="pro-active" id="pro-active" hidden>
+            <p class="pro-active-badge"><span data-icon="check"></span><span data-i18n="proActiveTitle"></span></p>
+            <p class="pro-licensed" id="pro-licensed"></p>
+            <ul class="pro-list" id="pro-active-now"></ul>
+            <p class="pro-soon-label" data-i18n="proComingIncluded"></p>
+            <ul class="pro-list soon" id="pro-active-soon"></ul>
+            <button type="button" class="btn ghost-danger" id="pro-remove" data-i18n="proRemove"></button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
     <dialog class="sheet" id="settings-dialog" aria-labelledby="settings-title">
       <form class="sheet-body" id="settings-form">
         <header class="modal-head">
@@ -224,6 +283,12 @@
               <input type="file" id="file-backup" accept="application/json,.json" hidden />
             </div>
             <p class="hint" data-i18n="dataHint"></p>
+          </section>
+
+          <section class="settings-group">
+            <h3 data-i18n="sectionPro"></h3>
+            <p class="support-text" id="pro-status-text"></p>
+            <button type="button" class="btn block" id="pro-open" data-icon="star"><span id="pro-open-label"></span></button>
           </section>
 
           <section class="settings-group">
