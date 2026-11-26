@@ -8,7 +8,7 @@ Paste-ready answers for the Chrome Web Store and Microsoft Edge Add-ons dashboar
 |---|---|
 | Chrome Web Store developer account | https://chrome.google.com/webstore/devconsole (one-time $5 registration) |
 | Edge Add-ons developer account | https://partner.microsoft.com/dashboard/microsoftedge (free) |
-| Package | Run `python tools/build.py`, then upload `dist/speed-dial-1.2.1-chromium.zip` (manifest.json is at the zip root, as both stores require) |
+| Package | Run `python tools/build.py`, copy the ZIP to `ops/webstore/speed-dial/`, then upload `speed-dial-<version>-chromium.zip` (manifest.json is at the zip root, as both stores require) |
 | Reviewer license key | Issue one just before submitting (see "Notes for the reviewer") and paste it only into the dashboard, never into this repository |
 
 ## Store listing
@@ -66,6 +66,7 @@ Speed Dial replaces the new tab page with the user's own dial of website shortcu
 | `search` | The search box on the new tab sends the user's query to their default search engine. |
 | `contextMenus` | Adds "Add this page to Speed Dial" and "Add link to Speed Dial" to the right-click menu. |
 | `activeTab` | When the user clicks the toolbar button, reads the current tab's address and title to prefill the tile they are adding. |
+| `bookmarks` (optional, since 1.3.0) | Optional permission, requested only when the user turns on "Show bookmarks bar" in Settings. It reads the bookmarks bar folder to show it at the top of the Speed Dial page, so users can hide the browser's own bar and see their bookmarks only there. Bookmarks are never modified or transmitted, and the permission is released when the setting is turned off. |
 
 **Host permissions:** none.
 
