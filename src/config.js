@@ -31,7 +31,8 @@ export const DEFAULT_SETTINGS = {
   showTitles: true,
   showSearch: true,
   openInNewTab: false,
-  remoteIcons: true,
+  remoteIcons: false,
+  showBookmarksBar: false,
   backgroundDim: 0.4,
   activeGroupId: null,
   collapsed: [],
@@ -76,6 +77,10 @@ export const PREVIEW_DEBOUNCE_MS = 180;
 export const BADGE_MS = 1500;
 export const POPUP_CLOSE_MS = 900;
 export const TOP_SITES_LIMIT = 12;
+export const BOOKMARKS_PERMISSION = { permissions: ['bookmarks'] };
+export const BOOKMARKS_BAR_IDS = ['1', 'toolbar_____'];
+export const BOOKMARK_ICON_PX = 32;
+export const BOOKMARKS_REFRESH_MS = 120;
 export const MENU_OFFSET_PX = 6;
 export const VIEWPORT_MARGIN_PX = 8;
 export const DONATE_URL = 'https://paypal.me/BashOM';

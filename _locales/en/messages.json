@@ -421,7 +421,25 @@
     "message": "Fetch missing site icons"
   },
   "remoteIconsHint": {
-    "message": "When Chrome has no icon cached for a site, ask Google's favicon service for it. Only the site's address is sent."
+    "message": "When your browser has no icon cached for a site, ask Google's favicon service for it. Only the site's address is sent. Firefox has no icon cache, so there every site is looked up."
+  },
+  "settingBookmarksBar": {
+    "message": "Show bookmarks bar"
+  },
+  "bookmarksBarHint": {
+    "message": "Shows your browser's bookmarks bar at the top of Speed Dial. Turn off the browser's own bookmarks bar to see your bookmarks only here."
+  },
+  "bookmarksBar": {
+    "message": "Bookmarks bar"
+  },
+  "bookmarksBarEmpty": {
+    "message": "Your bookmarks bar is empty"
+  },
+  "bookmarksFolderEmpty": {
+    "message": "Empty folder"
+  },
+  "bookmarksPermissionDenied": {
+    "message": "Speed Dial needs permission to read your bookmarks to show the bookmarks bar."
   },
   "creditLine": {
     "message": "Crafted By Bash"

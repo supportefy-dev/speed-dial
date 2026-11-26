@@ -75,6 +75,7 @@ export function normalize(raw) {
     showSearch: Boolean(s.showSearch),
     openInNewTab: Boolean(s.openInNewTab),
     remoteIcons: Boolean(s.remoteIcons),
+    showBookmarksBar: Boolean(s.showBookmarksBar),
     backgroundDim: clampNumber(Number(s.backgroundDim), DIM_RANGE, DEFAULT_SETTINGS.backgroundDim),
     activeGroupId: groupIds.has(s.activeGroupId) ? s.activeGroupId : groups[0].id,
     collapsed: Array.isArray(s.collapsed) ? s.collapsed.filter((id) => groupIds.has(id)) : [],

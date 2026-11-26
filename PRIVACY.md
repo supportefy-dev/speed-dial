@@ -22,7 +22,7 @@ Speed Dial only contacts other services in these cases:
 
 | When | What is sent | To whom |
 |---|---|---|
-| A tile uses **Site icon**, Chrome has no icon cached for that site, and **Settings > Fetch missing site icons** is on (the default) | The site's origin, for example `https://example.com` | Google's favicon service |
+| A tile uses **Site icon**, the browser has no icon cached for that site, and **Settings > Fetch missing site icons** is on (off by default since 1.3.0). Firefox has no icon cache Speed Dial can read, so there every **Site icon** tile is looked up while this setting is on | The site's origin, for example `https://example.com` | Google's favicon service |
 | A tile uses **Link** as its image | A normal image request for that link | The server hosting the image |
 | You press `Enter` in the search box | Your search text | Your browser's default search engine, through Chrome |
 | You open a tile | A normal visit to that site | That site |
@@ -34,6 +34,7 @@ Turning off **Fetch missing site icons** stops the favicon requests; those tiles
 - **Most visited sites** (`topSites`) are read only when you choose **Import most visited sites**, and only to create tiles you can edit or delete.
 - **The current tab's address and title** (`activeTab`) are read only when you click the toolbar button, to prefill the tile you are adding.
 - **Site icons** are read from Chrome's own favicon cache.
+- **Your bookmarks bar** (`bookmarks`, optional) is read only after you turn on **Show bookmarks bar** and allow the permission, and only to show it on the Speed Dial page. Turning the setting off gives the permission back.
 
 Speed Dial has no host permissions and never reads the content of the pages you visit.
 

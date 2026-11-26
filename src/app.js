@@ -2,7 +2,7 @@ import { load, getState, subscribe, getVersion, getBackground, onBackgroundChang
 import { t, applyI18n } from './i18n.js';
 import { h, icon, flip, hydrateIcons } from './dom.js';
 import { renderTile, renderAddTile, tileSignature } from './tiles.js';
-import { tileLabel, needsTabsApi } from './urls.js';
+import { tileLabel } from './urls.js';
 import { openMenu, initMenu } from './menu.js';
 import { expireToast } from './toast.js';
 import { initDialogs, openTileEditor, openGroupEditor, openSettings } from './dialogs.js';
@@ -10,6 +10,7 @@ import { initDnd } from './dnd.js';
 import { applyCredits } from './credits.js';
 import { loadLicense, onLicenseChange, canAddGroup } from './license.js';
 import { initPro } from './pro.js';
+import { initBookmarksBar, syncBookmarksBar } from './bookmarks.js';
 import { resizeImage, isImageFile } from './images.js';
 import { ICON_MAX_PX, ICON_QUALITY } from './config.js';
 import * as actions from './actions.js';
@@ -208,6 +209,15 @@ function applyAppearance(settings) {
   }
 }
 
+// Decoding before the first paint stops the background popping in after the tiles.
+// A broken image is still applied; the backdrop then simply stays empty.
+async function decodeImage(src) {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
+  await img.decode().catch(() => {});
+}
+
 function applyBackground(image) {
   els.backdrop.style.backgroundImage = image ? `url("${image}")` : '';
   els.root.classList.toggle('has-bg', Boolean(image));
@@ -219,6 +229,7 @@ function render() {
   const focused = document.activeElement;
   const focusedTile = focused?.closest?.('.tile[data-id]')?.dataset.id;
   applyAppearance(state.settings);
+  syncBookmarksBar(state.settings);
   renderGroupsBar(state);
   renderBoard(state);
   if (focused && !focused.isConnected && focusedTile) {
@@ -277,12 +288,7 @@ function showGroupMenu(id, placement) {
 function openTileFromClick(e, link) {
   const tile = actions.findTile(link.closest('.tile').dataset.id);
   if (!tile) return;
-  const background = e.ctrlKey || e.metaKey || e.button === 1;
-  const newTab = background || e.shiftKey || getState().settings.openInNewTab;
-  if (!newTab && !needsTabsApi(tile.url)) return;
-  e.preventDefault();
-  if (e.shiftKey && !background) actions.openUrl(tile.url, 'window');
-  else actions.openUrl(tile.url, newTab ? 'tab' : 'current', !background);
+  actions.openFromEvent(e, tile.url);
 }
 
 function visibleLinks() {
@@ -447,6 +453,7 @@ async function init() {
   initMenu();
   initDialogs();
   initPro();
+  initBookmarksBar();
   bindBoard();
   bindSearch();
   document.getElementById('settings-btn').addEventListener('click', openSettings);
@@ -478,14 +485,19 @@ async function init() {
     },
   });
 
-  await Promise.all([load(), loadLicense()]);
-  render();
+  try {
+    const [, , background] = await Promise.all([load(), loadLicense(), getBackground()]);
+    await decodeImage(background);
+    applyBackground(background);
+    render();
+  } finally {
+    els.root.classList.add('ready');
+  }
   onLicenseChange(render);
   subscribe(() => {
     render();
     expireToast(getVersion());
   });
-  applyBackground(await getBackground());
   onBackgroundChange(applyBackground);
 }
 

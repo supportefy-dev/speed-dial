@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="newtab.css" />
     <script type="module" src="app.js"></script>
   </head>
-  <body>
+  <body class="newtab">
     <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+    <nav class="bookmarks-bar" id="bookmarks-bar" data-i18n-aria="bookmarksBar" hidden></nav>
 
     <header class="topbar">
       <button type="button" class="icon-btn glass" id="settings-btn" data-icon="settings" data-i18n-aria="settings" data-i18n-title="settings"></button>
@@ -272,6 +274,11 @@
               <input type="checkbox" class="switch" name="remoteIcons" />
             </label>
             <p class="hint" data-i18n="remoteIconsHint"></p>
+            <label class="row">
+              <span data-i18n="settingBookmarksBar"></span>
+              <input type="checkbox" class="switch" name="showBookmarksBar" />
+            </label>
+            <p class="hint" data-i18n="bookmarksBarHint"></p>
           </section>
 
           <section class="settings-group">

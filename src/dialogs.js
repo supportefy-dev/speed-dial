@@ -18,6 +18,8 @@ import {
 import * as actions from './actions.js';
 import { canAddGroup } from './license.js';
 import { openPro, renderProSettings } from './pro.js';
+import { requestBookmarksAccess, releaseBookmarksAccess } from './bookmarks.js';
+import { showToast } from './toast.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -282,7 +284,7 @@ export async function openSettings() {
   const { settings } = getState();
   const f = settingsForm.elements;
   for (const key of ['theme', 'layout', 'tileSize']) f[key].value = settings[key];
-  for (const key of ['showTitles', 'showSearch', 'openInNewTab', 'remoteIcons']) f[key].checked = settings[key];
+  for (const key of ['showTitles', 'showSearch', 'openInNewTab', 'remoteIcons', 'showBookmarksBar']) f[key].checked = settings[key];
   f.maxColumns.value = settings.maxColumns;
   f.backgroundDim.value = settings.backgroundDim;
   $('columns-out').textContent = settings.maxColumns;
@@ -296,6 +298,20 @@ function readSetting(el) {
   if (el.type === 'checkbox') return el.checked;
   if (el.type === 'range') return Number(el.value);
   return el.value;
+}
+
+// permissions.request needs the click's user activation, so it must run before any await.
+function toggleBookmarksBar(input) {
+  const save = (enable) =>
+    update((s) => {
+      s.settings.showBookmarksBar = enable;
+    });
+  if (!input.checked) return save(false).then(releaseBookmarksAccess);
+  return requestBookmarksAccess().then((granted) => {
+    if (granted) return save(true);
+    input.checked = false;
+    return showToast(t('bookmarksPermissionDenied'));
+  });
 }
 
 function initSettings() {
@@ -317,6 +333,7 @@ function initSettings() {
   });
   settingsForm.addEventListener('change', (e) => {
     const { name } = e.target;
+    if (name === 'showBookmarksBar') return toggleBookmarksBar(e.target);
     if (!(name in DEFAULT_SETTINGS)) return;
     const value = readSetting(e.target);
     update((s) => {

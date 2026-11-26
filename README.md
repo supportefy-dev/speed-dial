@@ -22,7 +22,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/supportefy-dev/speed-dial/releases/latest"><strong>Download the current release</strong></a>
+  <a href="https://chromewebstore.google.com/detail/speed-dial-groups-tiles/gdgbekkfhlfdfmdhcgmepiamipadgjjj"><strong>Add to Chrome</strong></a>
+  &nbsp;&middot;&nbsp;
+  <a href="https://github.com/supportefy-dev/speed-dial/releases/latest">Download the current release</a>
   &nbsp;&middot;&nbsp;
   <a href="#see-it-in-action">See it in action</a>
   &nbsp;&middot;&nbsp;
@@ -35,7 +37,7 @@
   <a href="https://github.com/supportefy-dev/speed-dial/issues">Report an issue</a>
 </p>
 
-> Speed Dial is not in the browser stores yet. Install it from the release ZIP for your browser, below.
+> Speed Dial is on the [Chrome Web Store](https://chromewebstore.google.com/detail/speed-dial-groups-tiles/gdgbekkfhlfdfmdhcgmepiamipadgjjj); it also works in Edge, Brave, Vivaldi and Opera from there. For Firefox, or to install a specific version, use the release ZIP for your browser, below.
 
 ## Features
 
@@ -124,7 +126,9 @@
 
 ## Install
 
-Download the ZIP for your browser from the [latest release](https://github.com/supportefy-dev/speed-dial/releases/latest) and unzip it to a folder you will keep; the browser loads the extension from that folder.
+The easiest way in Chrome and other Chromium browsers is the [Chrome Web Store](https://chromewebstore.google.com/detail/speed-dial-groups-tiles/gdgbekkfhlfdfmdhcgmepiamipadgjjj), which also keeps Speed Dial up to date.
+
+To install by hand, download the ZIP for your browser from the [latest release](https://github.com/supportefy-dev/speed-dial/releases/latest) and unzip it to a folder you will keep; the browser loads the extension from that folder.
 
 ### Chrome, Edge, Brave, Vivaldi, Opera, Arc
 
@@ -219,7 +223,7 @@ The license key is verified on your device with a digital signature; there is no
 
 Speed Dial has no account, no analytics and no server of its own. Your groups, tiles, uploaded images, background and settings are saved in the browser (`chrome.storage.local`). A few actions do reach other services:
 
-- **Missing site icons.** When Chrome has no icon cached for a site and **Settings > Fetch missing site icons** is on, the site's origin (for example `https://example.com`) is sent to Google's favicon service. Turn it off and those tiles show a letter.
+- **Missing site icons.** When the browser has no icon cached for a site and **Settings > Fetch missing site icons** is on (off by default), the site's origin (for example `https://example.com`) is sent to Google's favicon service. Firefox has no icon cache Speed Dial can read, so there every site is looked up while the setting is on. With it off, those tiles show a letter.
 - **Image links.** A tile that uses an image link loads that image from its host.
 - **Search.** Pressing `Enter` in the search box sends the text to your default search engine.
 - **Backups.** Exported backup files are saved where you choose; they contain your tiles, uploaded images and background.
@@ -235,6 +239,7 @@ The full policy is in [PRIVACY.md](PRIVACY.md).
 | `search` | Send the search box to your default search engine |
 | `contextMenus` | The **Add to Speed Dial** right-click entries |
 | `activeTab` | Read the current page's address and title when you click the toolbar button |
+| `bookmarks` (optional) | Show your bookmarks bar on Speed Dial; asked for only when you turn on **Show bookmarks bar** |
 
 Speed Dial requests no host permissions and never reads the content of the pages you visit.
 

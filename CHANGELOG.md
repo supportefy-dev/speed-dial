@@ -2,6 +2,20 @@
 
 All notable changes to Speed Dial are documented in this file.
 
+## 1.3.0 - 2026-11-26
+
+### Added
+
+- **Show bookmarks bar** (Settings > Behavior, off by default): shows your browser's bookmarks bar at the top of Speed Dial, with folders and subfolders opening as menus. Turn off the browser's own bookmarks bar to see your bookmarks only on Speed Dial. The bar follows bookmark changes as they happen.
+- The `bookmarks` permission is optional: it is requested only when you turn the setting on and given back when you turn it off, so existing users see no new permission prompt on update.
+
+### Changed
+
+- A new tab no longer shows a half-drawn page: tiles, groups and your background image appear together on the first paint.
+- **Fetch missing site icons** is now off by default for new installs, so no site address is sent to Google's favicon service unless you turn it on. Existing settings are kept.
+- The privacy policy and the setting's hint now say that Firefox, which has no icon cache Speed Dial can read, looks up every site icon while the setting is on.
+- The README links to the Chrome Web Store listing.
+
 ## 1.2.1 - 2026-09-30
 
 ### Changed

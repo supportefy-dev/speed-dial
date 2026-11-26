@@ -12,7 +12,7 @@ import {
 import { canRestoreGroups } from './license.js';
 import { showToast } from './toast.js';
 import { t } from './i18n.js';
-import { normalizeUrl, shortTitle, tileLabel } from './urls.js';
+import { normalizeUrl, shortTitle, tileLabel, needsTabsApi } from './urls.js';
 import { EXPORT_FORMAT, EXPORT_FILE_PREFIX, SCHEMA_VERSION, TOP_SITES_LIMIT, GROUP_PALETTE } from './config.js';
 
 export const findTile = (id) => getState().tiles.find((x) => x.id === id);
@@ -33,6 +33,15 @@ export function openUrl(url, where = 'current', active = true) {
   if (where === 'window') return chrome.windows.create({ url });
   if (where === 'tab') return chrome.tabs.create({ url, active });
   return chrome.tabs.update({ url });
+}
+
+export function openFromEvent(e, url) {
+  const background = e.ctrlKey || e.metaKey || e.button === 1;
+  const newTab = background || e.shiftKey || getState().settings.openInNewTab;
+  if (!newTab && !needsTabsApi(url)) return;
+  e.preventDefault();
+  if (e.shiftKey && !background) openUrl(url, 'window');
+  else openUrl(url, newTab ? 'tab' : 'current', !background);
 }
 
 export function searchWeb(text) {
